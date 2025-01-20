@@ -1,10 +1,10 @@
-package com.spring.firstProject;
+package com.shreyam.journalApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FirstProjectApplicationTests {
+class JournalApplicationTests {
 
 	@Test
 	void contextLoads() {

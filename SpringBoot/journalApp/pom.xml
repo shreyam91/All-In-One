@@ -8,11 +8,11 @@
 		<version>3.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.spring</groupId>
-	<artifactId>firstProject</artifactId>
+	<groupId>com.shreyam</groupId>
+	<artifactId>journalApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>firstProject</name>
-	<description>First project for Spring Boot</description>
+	<name>Journal Application</name>
+	<description>This project is based on Journal Application.</description>
 	<url/>
 	<licenses>
 		<license/>

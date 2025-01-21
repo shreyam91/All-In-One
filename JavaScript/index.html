@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first trial website</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About Me</li>
+            <li>contact Me</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo eum ullam, eligendi odio minima fugit natus iste nemo quidem inventore exercitationem odit. Nihil, asperiores. Similique nihil voluptate excepturi suscipit minima.</p>
+    </div>
+    <div class="container">
+        <table>
+            <caption > table </caption> <!-- caption -->
+            <tbody>
+                <tr>
+                    <th scope = "row">1</th>
+                    <td colspan="1">bird</td>
+                    <td>tweet</td>
+                </tr>
+                <tr>
+                    <th scope = "row">2</th>
+                    <td colspan="1">dog</td>
+                    <td>bicoin</td>
+                </tr>
+                <tr>
+                    <th scope = "row">3</th>
+                    <td colspan="1">illustration</td>
+                    <td>meta</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+<!-- <script src="script.js"></script> -->
+
+<button onclick="myFunction()"> Try It</button>
+<p id ="demo"></p>
+<script>
+    function myFunction() {
+    let text;
+    let name = prompt("what is your favorite actor?");
+    if(name == null || name == ""){
+        text = "User cancelled";
+    }else{
+        text = 'hello' + name;
+    }
+    document.getElementById("demo").innerHTML = text;
+    }
+</script>
+</body>
+</html>

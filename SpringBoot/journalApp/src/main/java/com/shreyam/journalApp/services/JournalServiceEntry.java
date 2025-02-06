@@ -1,5 +1,6 @@
 package com.shreyam.journalApp.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.shreyam.journalApp.entity.JournalEntity;
+import com.shreyam.journalApp.entity.User;
 import com.shreyam.journalApp.repository.JournalEntryRepository;
 
 @Component
@@ -15,8 +17,16 @@ public class JournalServiceEntry {
     @Autowired
     private JournalEntryRepository journalEntryRepository;
 
-    public void saveEntry(JournalEntity journalEntity){
-        journalEntryRepository.save(journalEntity);
+    @Autowired
+    private UserService userService;
+
+    public void saveEntry(JournalEntity journalEntity, String userName){
+        User user = userService.findByUserName(userName);
+        journalEntity.setDate(LocalDateTime.now());
+        JournalEntity saved = journalEntryRepository.save(journalEntity);
+        user.getJournalEntries().add(saved);
+        userService.saveEntry(user);
+
     }
 
     public List<JournalEntity> getAll(){

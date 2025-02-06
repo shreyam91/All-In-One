@@ -8,12 +8,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.mongodb.lang.NonNull;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Document(collection = "journal_entries")
-@Getter
-@Setter
+@Data
+@NoArgsConstructor
 public class JournalEntity {
 
     @Id

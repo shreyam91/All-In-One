@@ -26,7 +26,10 @@ public class JournalServiceEntry {
         JournalEntity saved = journalEntryRepository.save(journalEntity);
         user.getJournalEntries().add(saved);
         userService.saveEntry(user);
-
+    }
+    
+    public void saveEntry(JournalEntity journalEntity){
+        journalEntryRepository.save(journalEntity);
     }
 
     public List<JournalEntity> getAll(){

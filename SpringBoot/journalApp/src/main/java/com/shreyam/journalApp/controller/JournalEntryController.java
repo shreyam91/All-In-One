@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -67,18 +68,19 @@ public class JournalEntryController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // @PutMapping("/id/{id}")
-    // public ResponseEntity<?> updateJournalById(@PathVariable ObjectId id, @RequestBody JournalEntity newEntity ){
-    //     JournalEntity old = journalServiceEntry.findById(id).orElse(null);
-    //     if(old != null){
-    //         old.setContent(newEntity.getContent() != null && !newEntity.getContent().equals("") ? newEntity.getContent() : old.getContent());
-            
-    //         old.setTitle(newEntity.getTitle() != null && !newEntity.getTitle().equals("") ? newEntity.getTitle() : old.getTitle());
+    @PutMapping("/id/{userName}/{id}")
+    public ResponseEntity<?> updateJournalById(@PathVariable ObjectId id, @PathVariable String userName, @RequestBody JournalEntity newEntity ){
 
-    //         journalServiceEntry.saveEntry(old);
-    //         return new ResponseEntity<>(old, HttpStatus.OK);
-    //     }
-    //     return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-    // }
+        JournalEntity old = journalServiceEntry.findById(id).orElse(null);
+        if(old != null){
+            old.setContent(newEntity.getContent() != null && !newEntity.getContent().equals("") ? newEntity.getContent() : old.getContent());
+            
+            old.setTitle(newEntity.getTitle() != null && !newEntity.getTitle().equals("") ? newEntity.getTitle() : old.getTitle());
+
+            journalServiceEntry.saveEntry(old);
+            return new ResponseEntity<>(old, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    }
     
 }

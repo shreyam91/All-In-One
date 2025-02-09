@@ -26,7 +26,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .build();
             return userDetails;
         }
-        // throw new UnsupportedOperationException("Not supported yet.");
         return null;
     }
 

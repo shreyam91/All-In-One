@@ -27,10 +27,6 @@ public class User {
 
     @DBRef
     private List<JournalEntity> journalEntries = new ArrayList<>();
-
-    public Object getRoles() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getRoles'");
-    }
+    private List<String> roles;
 
 }

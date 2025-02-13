@@ -34,9 +34,10 @@ let b = NaN;
 console.log(isNaN(c) && isNaN(b));
 
 let n =10;
-// console.log(++n); // 11
-// console.log(n++); // 10
-// console.log(n); //11
-console.log(++n+n++);
+let m =10;
+console.log(++n); // 11
+console.log(n++); // 10
+console.log(n); //11
+console.log(++m+m++); // 22
 
 // if there is one string and one number and there is any operator except then + the answer is always NaN.

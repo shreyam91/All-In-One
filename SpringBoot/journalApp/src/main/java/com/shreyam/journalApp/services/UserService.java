@@ -1,5 +1,6 @@
 package com.shreyam.journalApp.services;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,6 +21,7 @@ public class UserService {
     private static final PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     public void saveEntry(User user){
+        user.setRoles(Arrays.asList("USER"));
         userRepository.save(user);
     }
     

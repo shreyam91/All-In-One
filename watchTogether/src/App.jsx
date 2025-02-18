@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import io from "socket.io-client";
+import RoomCreation from "./components/RoomCreation";
+import Message from "./components/Message";
+import ScreenSharePage from "./components/ScreenSharePage"; // Import the new screen share page
+import "./App.css";
+
+// Connect to the backend server
+const socket = io("http://localhost:4000");
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [message, setMessage] = useState(""); // Message to display (success/error)
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Router>
+      <div className="App">
+        <h1>Watch Together</h1>
+        <Routes>
+          {/* ✅ Correct way to define a Route in v6 */}
+          <Route
+            path="/"
+            element={
+              <>
+                <RoomCreation setMessage={setMessage} />
+                <Message message={message} />
+              </>
+            }
+          />
+
+          <Route path="/screen-share/:roomId" element={<ScreenSharePage />} />
+        </Routes>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

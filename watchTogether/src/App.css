@@ -1,42 +1,70 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* src/App.css */
+.App {
+  font-family: Arial, sans-serif;
   text-align: center;
+  padding: 50px;
+  background-color: #f3f4f6;
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+  color: #333;
+  margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  margin-top: 20px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #4d90fe;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.card {
-  padding: 2em;
+button:hover {
+  background-color: #357ae8;
 }
 
-.read-the-docs {
-  color: #888;
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  font-size: 18px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.room-creation div {
+  margin-bottom: 15px;
+}
+
+.room-creation .buttons {
+  margin-top: 20px;
+}
+
+.room-creation button {
+  margin-top: 15px;
+}
+
+.room-creation div span {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.room-creation button {
+  cursor: pointer;
+  background-color: #28a745;
+}
+
+.room-creation button:hover {
+  background-color: #218838;
 }

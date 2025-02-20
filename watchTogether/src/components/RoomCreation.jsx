@@ -100,7 +100,7 @@ const RoomCreation = ({ setMessage }) => {
       </div>
 
       {/* Render Room ID after successful creation */}
-      {createdRoomId && (
+      {/* {createdRoomId && (
         <div>
           <h2>Your Room ID:</h2>
           <span>{createdRoomId}</span>
@@ -109,7 +109,7 @@ const RoomCreation = ({ setMessage }) => {
             <button onClick={shareRoomLink}>Share Room Link</button>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Buttons to create room or join room */}
       <div className="buttons">

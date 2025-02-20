@@ -102,3 +102,8 @@ button:hover {
 .room-creation button:hover {
   background-color: #218838;
 }
+
+
+/* 
+import { FaRegCopy } from "react-icons/fa";
+import { FaShareNodes } from "react-icons/fa6"; */

@@ -19,10 +19,8 @@ const io = socketIo(server, {
 
 // Helper function to generate a unique Room ID
 const generateRoomId = () => {
-  const randomString = Math.random().toString(4).substring(2, 8); // Random 6-character string
-//   const timestamp = Date.now(); // Unique timestamp
-//   return randomString + timestamp; // Combine to ensure uniqueness
-  return randomString; // Combine to ensure uniqueness
+  const randomString = Math.random().toString(36).substring(2, 8); // Random 6-character string
+  return randomString; // Ensure uniqueness
 };
 
 io.on("connection", (socket) => {
@@ -43,6 +41,25 @@ io.on("connection", (socket) => {
     socket.join(roomId);
     console.log(`${userName} joined room ${roomId}`);
     socket.emit("room-joined", roomId, userName);
+
+    // Notify other users in the room that a new user has joined
+    socket.to(roomId).emit("user-joined", userName);
+  });
+
+  // Handle screen sharing start
+  socket.on("start-screen-share", (roomId, stream) => {
+    console.log(`Screen share started in room ${roomId}`);
+
+    // Broadcast the screen stream to all users in the room
+    socket.to(roomId).emit("screen-share-started", stream);
+  });
+
+  // Handle screen sharing stop
+  socket.on("stop-screen-share", (roomId) => {
+    console.log(`Screen share stopped in room ${roomId}`);
+
+    // Notify all users in the room that screen sharing has stopped
+    socket.to(roomId).emit("screen-share-stopped");
   });
 
   // Handle disconnection

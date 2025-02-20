@@ -28,25 +28,6 @@ const RoomCreation = ({ setMessage }) => {
     socket.emit("join-room", roomId, name); // Emit event to join room
   };
 
-  // Copy Room ID to clipboard
-  const copyRoomId = () => {
-    if (createdRoomId) {
-      navigator.clipboard.writeText(createdRoomId).then(() => {
-        setMessage(`Room ID ${createdRoomId} copied to clipboard.`);
-      });
-    }
-  };
-
-  // Share Room Link
-  const shareRoomLink = () => {
-    if (createdRoomId) {
-      const roomLink = `${window.location.origin}/screen-share/${createdRoomId}`;
-      navigator.clipboard.writeText(roomLink).then(() => {
-        setMessage(`Room link ${roomLink} copied to clipboard.`);
-      });
-    }
-  };
-
   // Listen for room creation event
   React.useEffect(() => {
     socket.on("room-created", (roomId, userName) => {
@@ -72,49 +53,45 @@ const RoomCreation = ({ setMessage }) => {
 
   return (
     <div className="room-creation">
-      <h1>Welcome to Room Creation</h1>
-
-      {/* Input fields */}
-      <div>
-        <label>
-          Your Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Enter your name"
-          />
-        </label>
-      </div>
-
-      <div>
-        <label>
-          Room ID (Only required when joining):
-          <input
-            type="text"
-            value={roomId}
-            onChange={(e) => setRoomId(e.target.value)}
-            placeholder="Enter Room ID"
-          />
-        </label>
-      </div>
-
-      {/* Render Room ID after successful creation */}
-      {/* {createdRoomId && (
-        <div>
-          <h2>Your Room ID:</h2>
-          <span>{createdRoomId}</span>
-          <div>
-            <button onClick={copyRoomId}>Copy Room ID</button>
-            <button onClick={shareRoomLink}>Share Room Link</button>
-          </div>
+      <header>
+        <div className="logo">
+          {/* You can add your logo here or the name of the app */}
+          <h1>WT</h1>
         </div>
-      )} */}
+      </header>
 
-      {/* Buttons to create room or join room */}
-      <div className="buttons">
-        <button onClick={createRoom}>Create Room</button>
-        <button onClick={joinRoom}>Join Room</button>
+      <div className="content">
+        <h2>Welcome to Room Creation</h2>
+        <p>Create or join a room to start sharing your screen with others!</p>
+
+        <div>
+          <label>
+            Your Name:
+            <input
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              placeholder="Enter your name"
+            />
+          </label>
+        </div>
+
+        <div>
+          <label>
+            Room ID (Only required when joining):
+            <input
+              type="text"
+              value={roomId}
+              onChange={(e) => setRoomId(e.target.value)}
+              placeholder="Enter Room ID"
+            />
+          </label>
+        </div>
+
+        <div className="buttons">
+          <button onClick={createRoom}>Create Room</button>
+          <button onClick={joinRoom}>Join Room</button>
+        </div>
       </div>
     </div>
   );

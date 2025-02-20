@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Watch Together</h1>
+        <h1 className="h1">Watch Together</h1>
         <Routes>
           {/* ✅ Correct way to define a Route in v6 */}
           <Route

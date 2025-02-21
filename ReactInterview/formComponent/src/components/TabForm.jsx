@@ -2,6 +2,7 @@ import Profile from "./Profile";
 import Interest from "./Interest";
 import Setting from "./Setting";
 import { useState } from "react";
+
 const TabForm = () => {
     const tabs = [
         {
@@ -41,7 +42,7 @@ const TabForm = () => {
         {
             name: "Setting",
             component: Setting, 
-            validate:() =>{
+            validate: () => {
                 return true;
             }
         }
@@ -75,11 +76,18 @@ const TabForm = () => {
         console.log(data);
     };
 
+    // Handle tab change with validation
+    const handleTabChange = (index) => {
+        if (tabs[activeTab].validate(data)) { // validate before changing tab
+            setActiveTab(index);
+        }
+    };
+
     return (
         <>
             <div className="heading-container">
                 {tabs.map((t, index) => (
-                    <div key={index} className="heading" onClick={() => setActiveTab(index)}>
+                    <div key={index} className="heading" onClick={() => handleTabChange(index)}>
                         {t.name}
                     </div>
                 ))}
@@ -87,9 +95,9 @@ const TabForm = () => {
             <div className="tab-body">
                 <ActiveTabComponent data={data} setData={setData} errors={errors} />
             </div>
-            <div>
+            <div className="button">
                 {activeTab > 0 && (
-                    <button onClick={handlePrevClick}>Prev</button>
+                    <button onClick={handlePrevClick} className="prev">Prev</button>
                 )}
                 {activeTab < tabs.length - 1 && (
                     <button onClick={handleNextClick}>Next</button>

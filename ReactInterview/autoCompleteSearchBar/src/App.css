@@ -40,3 +40,24 @@
 .read-the-docs {
   color: #888;
 }
+.search-input{
+  padding: 5px;
+  width: 500px;
+}
+.result-container{
+  width: 500px;
+  max-height: 500px;
+  margin: auto;
+  border: 1px solid blue;
+  padding: 5px;
+  text-align: left;
+  overflow-y: scroll;
+}
+.result{
+  display: block;
+  padding: 3px;
+}
+.result:hover{
+  background-color: gray;
+  cursor: pointer;
+}

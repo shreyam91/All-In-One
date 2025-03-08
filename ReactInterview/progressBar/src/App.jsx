@@ -1,17 +1,27 @@
 
+import { useEffect, useState } from 'react';
 import './App.css'
 
 const ProgressBar = ({progress}) => {
+
+  const[animatedProgress, setAnimatedProgress] = useState(0);
+
+  useEffect(()=>{
+    setTimeout(()=> setAnimatedProgress(progress),100)
+  },[progress]);
+
   return ( 
   <div className='outer'>
 
     <div className='inner' 
-    style={{width: `${progress}%`, 
-    color: progress < 5 ? 'black' : 'white'}}
-    role="progressbar"
-    aria-valuenow={progress}
-    aria-valuemax='100'
-    aria-valuemin='0'
+      style={{
+        // width: `${animatedProgress}%`,  //not efficient 
+        transform: `translateX(${animatedProgress - 100}%)`, //efficient way
+        color: animatedProgress < 5 ? 'black' : 'white'}}
+      role="progressbar"
+      aria-valuenow={progress}
+      aria-valuemax='100'
+      aria-valuemin='0'
     >
     {progress}% 
     </div>

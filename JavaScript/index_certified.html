@@ -1,0 +1,305 @@
+<!-- <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Paths</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body class="bg-gray-100 p-4">
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">2026 Certification Paths</h1>
+        <p class="bg-blue-900 text-white p-4 rounded-lg mb-6">
+            Choose your preferred certification path, you only need to complete one path to certify!
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-yellow-500 text-white p-2 rounded-t-lg text-center font-bold">Fast Track</div>
+            <div class="bg-blue-500 text-white p-2 rounded-t-lg text-center font-bold">Standard</div>
+            <div class="bg-gray-500 text-white p-2 rounded-t-lg text-center font-bold">AHIP</div>
+            <div class="bg-gray-500 text-white p-2 rounded-t-lg text-center font-bold">NABIP</div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="border-2 border-blue-500 p-4">
+                <p class="font-bold">Launch Date</p>
+                <p>06/01/2025</p>
+                <p class="font-bold mt-4">Overview</p>
+                <p>Fast Track combines Base Level & Next Level assessments into one</p>
+                <p class="font-bold mt-4">Eligibility</p>
+                <p>All Agents</p>
+                <p class="font-bold mt-4">Language Available</p>
+                <p>English</p>
+                <p class="font-bold mt-4">Attempts Allowed per Assessment</p>
+                <p>6</p>
+            </div>
+            <div class="border-2 border-gray-300 p-4">
+                <p class="font-bold">Launch Date</p>
+                <p>06/08/2025</p>
+                <p class="font-bold mt-4">Overview</p>
+                <p>Standard Certifications Path</p>
+                <p class="font-bold mt-4">Eligibility</p>
+                <p>All Agents</p>
+                <p class="font-bold mt-4">Language Available</p>
+                <p>English / Español</p>
+                <p class="font-bold mt-4">Attempts Allowed per Assessment</p>
+                <p>6</p>
+            </div>
+            <div class="border-2 border-gray-300 p-4">
+                <p class="font-bold">Launch Date</p>
+                <p>TBD</p>
+                <p class="font-bold mt-4">Overview</p>
+                <p>Agents who want to transfer AHIP use this path</p>
+                <p class="font-bold mt-4">Eligibility</p>
+                <p>Agents transferring AHIP</p>
+                <p class="font-bold mt-4">Language Available</p>
+                <p>English / Español</p>
+                <p class="font-bold mt-4">Attempts Allowed per Assessment</p>
+                <p>6</p>
+            </div>
+            <div class="border-2 border-gray-300 p-4">
+                <p class="font-bold">Launch Date</p>
+                <p>TBD</p>
+                <p class="font-bold mt-4">Overview</p>
+                <p>Agents who want to transfer NABIP use this path</p>
+                <p class="font-bold mt-4">Eligibility</p>
+                <p>Agents transferring NABIP</p>
+                <p class="font-bold mt-4">Language Available</p>
+                <p>English / Español</p>
+                <p class="font-bold mt-4">Attempts Allowed per Assessment</p>
+                <p>6</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certification Paths</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f8f8f8;
+margin: 0;
+padding: 0;
+}
+.container {
+width: 80%;
+margin: auto;
+background: white;
+padding: 20px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+}
+.header button {
+background: #007bff;
+color: white;
+border: none;
+padding: 10px 15px;
+cursor: pointer;
+border-radius: 5px;
+}
+.header .secondary-btn {
+background: white;
+color: black;
+border: 1px solid black;
+}
+.header button:hover {
+background: #0056b3;
+}
+.certification-title {
+background: #004A98;
+color: white;
+padding: 15px;
+font-size: 18px;
+font-weight: bold;
+}
+.table-container {
+margin-top: 20px;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 12px;
+text-align: center;
+}
+th {
+background: #004A98;
+color: white;
+}
+.highlight {
+background: #FFC107;
+font-weight: bold;
+}
+.fast-track {
+background: #FFC107;
+color: black;
+font-weight: bold;
+}
+.standard {
+background: #89CFF0;
+}
+.ahip, .nabip {
+background: #ccc;
+}
+.footer-note {
+font-size: 12px;
+color: #666;
+margin-top: 20px;
+}
+.left-column {
+font-weight: bold;
+background: #f1f1f1;
+text-align: left;
+padding-left: 15px;
+}
+.svg-heading {
+  position: relative;
+  display: inline-block;
+  width: 165px;
+  height: 33px;
+}
+
+.svg-heading svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.svg-heading span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="header">
+<div>
+<p><b>Get Certified Today!</b><br>Compare Certification Paths before launching Learning Lab.</p>
+<button onclick="launchLab()">Launch Learning Lab</button>
+</div>
+<div>
+<p><b>View Your Certification Status</b><br>Learn about products you are certified to sell.</p>
+<button class="secondary-btn" onclick="viewStatus()">Certification Status</button>
+</div>
+</div>
+
+<div class="certification-title">2026 Certification Paths</div>
+
+<div class="table-container">
+<table>
+<tr>
+<th>
+<svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="none">
+  <path d="M0 15.2188L16.1066 0.26728V30.1702L0 15.2188Z" fill="#04163F"/>
+</svg></th>
+<th class="fast-track">
+<svg xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0.635657 40.2972L42.6047 0.917039L76.6385 1.03874L0.69295 71.4308L0.635657 40.2972Z" fill="#FF6814"/>
+</svg>
+    <div class="svg-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z" fill="#002677"/>
+      </svg>
+      <span>Fast Track</span>
+    </div>
+  </th>
+  <th class="standard">
+    <div class="svg-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z" fill="#002677"/>
+      </svg>
+      <span>Standard</span>
+    </div>
+  </th>
+  <th class="ahip">
+    <div class="svg-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z" fill="#002677"/>
+      </svg>
+      <span>AHIP</span>
+    </div>
+  </th>
+  <th class="nabip">
+    <div class="svg-heading">
+      <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z" fill="#002677"/>
+      </svg>
+      <span>NABIP</span>
+    </div>
+  </th>
+  </tr>
+<tr>
+<td class="left-column">Launch Date</td>
+<td>06/01/2025</td>
+<td>06/08/2025</td>
+<td>TBD</td>
+<td>TBD</td>
+</tr>
+<tr>
+
+
+</table>
+</div>
+
+<div class="table-container">
+<h3>Base Level Assessments</h3>
+<table>
+<tr>
+<th>Assessment</th>
+<th>Fast Track</th>
+<th>Standard</th>
+<th>AHIP</th>
+<th>NABIP</th>
+</tr>
+<tr>
+<td class="left-column">Medicare Basics Assessment</td>
+<td class="fast-track">All-in-One Assessment 85% Passing Score</td>
+<td class="standard">85% Passing Score</td>
+<td class="ahip">Credit with AHIP Transfer</td>
+<td class="nabip">Credit with NABIP Transfer</td>
+</tr>
+<tr>
+
+</table>
+</div>
+
+<div class="footer-note">
+*After passing Base Level Assessments, you may take Next Level Assessments.
+</div>
+</div>
+
+<script>
+function launchLab() {
+alert("Launching Learning Lab...");
+}
+
+function viewStatus() {
+alert("Checking Certification Status...");
+}
+</script>
+
+</body>
+</html>

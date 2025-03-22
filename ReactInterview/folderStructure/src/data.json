@@ -1,0 +1,72 @@
+[
+    {
+        "name": "public",
+        "isFolder": "true",
+        "children":[
+            {
+                "name": "index.html",
+                "isFolder":"false"
+            },{
+                "name": "favicon.ico",
+                "isFolder":"false"
+            },{
+                "name": "manifest.json",
+                "isFolder":"false"
+            }
+        ]
+    },{
+        "name": "src",
+        "isFolder":"true",
+        "children":[
+            {
+                "name": "index.js",
+                "isFolder":"false"
+            },{
+                "name": "App.js",
+                "isFolder":"false"
+            },{
+                "name": "components",
+                "isFolder":"true",
+                "children":[
+                    {
+                        "name": "Header.js",
+                        "isFolder":"false"
+                    },{
+                        "name": "Footer.js",
+                        "isFolder":"false"
+                    }
+                ]
+            },{
+                "name": "pages",
+                "isFolder":"true",
+                "children":[
+                    {
+                        "name": "Home.js",
+                        "isFolder":"false"
+                    },{
+                        "name": "About.js",
+                        "isFolder":"false"
+                    }
+                ]
+            },{
+                "name": "services",
+                "isFolder":"true",
+                "children":[
+                    {
+                        "name": "api.js",
+                        "isFolder":"false"
+                    }
+                ]
+            },{
+                "name": "utils",
+                "isFolder":"true",
+                "children":[
+                    {
+                        "name": "helper.js",
+                        "isFolder":"false"
+                    }
+                ]
+            }
+        ]
+    }
+]

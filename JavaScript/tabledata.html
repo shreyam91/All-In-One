@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certification Paths</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .certification-title {
+            background: white;
+            color: #004A98;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            width: 372px;
+            height: 85.438px;
+            flex-direction: none;
+            align-items: center;
+            justify-content: center; 
+            place-items: center;  
+
+        }
+
+
+.title-container {
+    background: #04163F; 
+    color: #004A98; 
+    padding: 15px; 
+    font-size: 18px; 
+    font-weight: bold; 
+    width: 372px; 
+    height: 85.438px; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 0 auto; 
+    box-sizing: border-box; 
+    position: relative; 
+}
+
+.title-container svg {
+    position: absolute; 
+    left: 0; 
+    top: 0%; 
+    transform: translateY(-50%); 
+}
+
+.para {
+    width: 308px; 
+    flex-shrink: 0; 
+    border-radius: 4px; 
+    color: white; 
+    font-weight: 400; 
+    font-family: "Enterprise Sans VF"; 
+    font-size: 14px; 
+    font-style: normal; 
+    line-height: 18px; 
+    text-align: center; 
+    margin: 0; 
+}
+
+.sub-para {
+    font-weight: 700; 
+    text-align: center; 
+}
+
+.svg-fastrack{
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"189"%20height%3D"300"%20viewBox%3D"0%200%20189%20300"%20fill%3D"none"%3E%3Cpath%20d%3D"M0%200H189V300H0V0Z"%20fill%3D"%23F5B700"%20fill-opacity%3D"0.1"%2F%3E%3C%2Fsvg%3E');
+    background-size: contain; 
+    padding: 10px;
+    text-align: start;
+}
+
+.svg-standard{
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"189"%20height%3D"300"%20viewBox%3D"0%200%20189%20300"%20fill%3D"none"%3E%3Cpath%20d%3D"M0%200H189V300H0V0Z"%20fill%3D"%23CCF2F7"%20fill-opacity%3D"0.1"%2F%3E%3C%2Fsvg%3E');
+    background-size: contain; 
+    padding: 10px;
+    text-align: start;
+}
+.svg-ahip{
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"189"%20height%3D"300"%20viewBox%3D"0%200%20189%20300"%20fill%3D"none"%3E%3Cpath%20d%3D"M0%200H189V300H0V0Z"%20fill%3D"%23929496"%20fill-opacity%3D"0.1"%2F%3E%3C%2Fsvg%3E');
+    background-size: contain; 
+    padding: 10px;
+    text-align: start;
+}
+.svg-nabip{
+    background-image: url('data:image/svg+xml,%3Csvg%20xmlns%3D"http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg"%20width%3D"189"%20height%3D"300"%20viewBox%3D"0%200%20189%20300"%20fill%3D"none"%3E%3Cpath%20d%3D"M0%200H189V300H0V0Z"%20fill%3D"%23CBCCCD"%20fill-opacity%3D"0.1"%2F%3E%3C%2Fsvg%3E');
+    background-size: contain; 
+    padding: 10px;
+    text-align: start;
+}
+
+        .table-container {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #004A98;
+            color: white;
+        }
+
+        .highlight {
+            background: #FFC107;
+            font-weight: bold;
+        }
+
+        .fast-track {
+            position: relative;
+            background: #FFC107;
+            color: black;
+            font-weight: bold;
+        }
+
+        .standard {
+            background: #89CFF0;
+        }
+
+        .ahip,
+        .nabip {
+            background: #ccc;
+        }
+
+        .left-column {
+            font-weight: bold;
+            background: #f1f1f1;
+            text-align: left;
+            padding-left: 15px;
+        }
+
+        .base-level {
+            width: 340px;
+            height: 72px;
+            border-radius: 4px 0px 0px 0px;
+            background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+            padding: 12px 15px 12px 25px;
+            justify-content: flex-end;
+            align-items: center;
+            color: var(--Main-brand-primary, #002677);
+            font-family: "Enterprise Sans VF";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+        }
+
+        .para-base {
+            color: var(--Main-brand-primary, #002677);
+            font-family: "Enterprise Sans VF";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+
+        .para-next{
+            color: var(--Main-brand-primary, #002677);
+            font-family: "Enterprise Sans VF";
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            text-align: start;
+
+        }
+        .level-next{
+            display: flex;
+            color: var(--Main-brand-primary, #002677);
+            font-family: "Enterprise Sans VF";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 20px;
+        }
+
+        .next-container{
+            background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+        }
+        .row-next{
+            background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+        }
+
+        .row {
+            background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .svg-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .svg-heading {
+            position: relative;
+            display: inline-block;
+            width: 165px;
+            height: 33px;
+        }
+
+        .svg-heading svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .svg-heading span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+            text-align: center; 
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="table-container">
+        <table>
+            <tr>
+                <th class="certification-title">
+                    <h2>2026 Certification Paths</h2>
+                    <div class="title-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="#0000FF">
+                            <path d="M0 15.2188L16.1066 0.26728V30.1702L0 15.2188Z" fill="#04163F"/>
+                        </svg>
+                        <p class="para">Choose your preferred certification path, <span class="sub-para">you <br> only need to
+                            complete one path to certify!</span></p>
+                    </div>
+                </th>
+
+                <th class="fast-track">
+                    <div class="svg-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.635657 40.2972L42.6047 0.917039L76.6385 1.03874L0.69295 71.4308L0.635657 40.2972Z"
+                                fill="#FF6814" />
+                            <text x="10" y="50" font-family="Arial" font-size="14" fill="#FFFFFF" transform="rotate(-45 10,40)">Fastest</text>
+                        </svg>
+                    </div>
+                    <div class="svg-heading">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33" fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+                        </svg>
+                        <span>Fast Track</span>
+                    </div>
+                </th>
+                
+
+                <th class="standard">
+
+                    <div class="svg-heading">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+                        </svg>
+                        <span>Standard</span>
+                    </div>
+                </th>
+
+                <th class="ahip">
+                    <div class="svg-heading">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+
+                        </svg>
+                        <span>AHIP</span>
+                    </div>
+                </th>
+
+                <th class="nabip">
+                    <div class="svg-heading">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="165" height="33" viewBox="0 0 165 33"
+                            fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+
+                        </svg>
+                        <span>NABIP</span>
+                    </div>
+                </th>
+            </tr>
+
+            <tr>
+                <td class="left-column">Launch Date</td>
+                <td class="svg-fastrack">06/01/2025</td>
+                <td class="svg-standard">06/08/2025</td>
+                <td class="svg-ahip">TBD</td>
+                <td class="svg-nabip">TBD</td>
+            </tr>
+
+            <tr>
+                <td class="left-column">Overview</td>
+               <td class="svg-fastrack">Fast Track Combines Base Level & Next Level Assessments into one</td>
+                <td class="svg-standard">Standard Certifications Path</td>
+                <td class="svg-ahip">Agents who want to transfer AHIP use this path</td>
+                <td class="svg-nabip">Agents who want to transfer NABIP use this path</td>
+            </tr>
+
+            <tr>
+                <td class="left-column">Elligibility</td>
+                <td class="svg-fastrack">Premier Agents and Standard Fast Track Qualifications</td>
+                <td class="svg-standard">All Agents</td>
+                <td class="svg-ahip">Agents transferring AHIP</td>
+                <td class="svg-nabip">Agents transferring NABIP</td>
+            </tr>
+
+            <tr>
+                <td class="left-column">Language Available</td>
+                <td class="svg-fastrack">English</td>
+                <td class="svg-standard">English/Espanol</td>
+                <td class="svg-ahip">English/Espanol</td>
+                <td class="svg-nabip">English/Espanol</td>
+            </tr>
+
+            <tr>
+                <td class="left-column">Attempts Allowed per Assessments</td>
+                <td class="svg-fastrack">2</td>
+                <td class="svg-standard">6</td>
+                <td class="svg-ahip">6</td>
+                <td class="svg-nabip">6</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <td class="base-level">
+                    <p class="para-next"> <span class="level-next" >Base Level Assesments:</span>
+                        Certifies you to sell UnitedHealthcare Medicare Advantage (non-SNP),
+                            Prescription Drug and Medicare Supplement Plans
+                    </p>
+                    
+                </td>
+
+                <td class="fast-track">Fast Track</th>
+                <th class="standard">Standard</th>
+                <th class="ahip">AHIP</th>
+                <th class="nabip">NABIP</th>
+            </tr>
+
+            <tr>
+
+                <td class="left-column">Medicare Basics Assessment</td>
+                <td class="svg-fastrack">All-in-One Assessment 85% Passing Score</td>
+                <td class="svg-standard">85% Passing Score</td>
+                <td class="svg-ahip">Credit with AHIP Transfer</td>
+                <td class="svg-nabip">Credit with NABIP Transfer</td>
+
+            </tr>
+
+            <tr>
+
+                <td class="left-column">Ethics and Compliance Assesments</td>
+                <td class="svg-fastrack"></td>
+                <td class="svg-standard">85% Passing Score</td>
+                <td class="svg-ahip">85% Passing Score</td>
+                <td class="svg-nabip">85% Passing Score</td>
+            </tr>
+
+            <tr>
+                <td class="left-column">AARP Assesments</td>
+                <td class="svg-fastrack"></td>
+                <td class="svg-standard">70% Passing Score</td>
+                <td class="svg-ahip">70% Passing Score</td>
+                <td class="svg-nabip">70% Passing Score</td>
+            </tr>
+
+            <tr class="row-next">
+                <td class="next-container">
+                    <p class="para-next"> <span class="level-next" >Next Level Assesments/Modules:</span>
+                        After you successfully pass all Base level <br> assessments, you may then take any
+                            of the Next level requirements to sell D-SNP/C-SNP and conduct sales/marketing events
+                    </p>
+                    
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="left-column">D-SNP /C-SNP Assessment</td>
+                <td class="svg-fastrack"></td>
+                <td class="svg-standard">85% Passing Score</td>
+                <td class="svg-ahip">85% Passing Score</td>
+                <td class="svg-nabip">85% Passing Score</td>
+            </tr>
+            <tr>
+                <td class="left-column">Events Basics (Module Only)</td>
+                <td class="svg-fastrack"></td>
+                <td class="svg-standard">Complete Module</td>
+                <td class="svg-ahip">Complete Module</td>
+                <td class="svg-nabip">Complete Module</td>
+            </tr>
+        </table>
+    </div>
+
+    </div>
+</body>
+</html>

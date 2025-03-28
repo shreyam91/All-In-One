@@ -84,22 +84,23 @@
         /* Medium screen responsiveness (768px to 1024px) */
         @media (min-width: 768px) and (max-width: 1024px) {
             .certificationBox {
-                flex-direction: row; /* Stack items in a column */
-                align-items: center; /* Center align items */
+                flex-direction: row; /* Keep items in a row */
+                justify-content: space-around; /* Adjust spacing */
+                align-items: center;
             }
 
             #certifiedTodayRoot .certification-left,
             #certificationStatusRoot .certification {
-                width: 80%; /* Reduce width for medium screens */
-                height: auto; /* Adjust height automatically */
+                width: 344px;
+                height: 183px;
                 margin-left: 0; /* Remove left margin */
-                margin-bottom: 20px; /* Add spacing between stacked items */
+                margin-bottom: 10px; /* Reduce gap between containers */
             }
 
             #certifiedTodayRoot .paragraph,
             #certificationStatusRoot .paragraph {
                 margin-left: 0; /* Remove left margin for medium screens */
-                text-align: center; /* Center align text */
+                text-align: start; /* Center align text */
             }
 
             #certifiedTodayRoot .button,

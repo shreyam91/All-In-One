@@ -1,0 +1,158 @@
+<style>
+    #getCertifiedRoot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 1152px;
+        height: 289px;
+        margin: 0 auto;
+    }
+
+    #getCertifiedRoot .container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    #getCertifiedRoot .content-wrapper {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #getCertifiedRoot .left-part {
+        flex: 1;
+    }
+
+    #getCertifiedRoot .paragraph {
+        width: 796px;
+        height: 59px;
+        font-family: "UHC2020Sans";
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--UHC-Neutrals-Gray-9, #212223);
+        margin-bottom: 20px;
+    }
+
+    #getCertifiedRoot .right-part {
+        width: 268px;
+        height: 197px;
+        margin-left: 41px;
+    }
+
+    #getCertifiedRoot .video-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    #getCertifiedRoot .links-container {
+        width: 787px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    #getCertifiedRoot .link {
+        display: flex;
+        align-items: center;
+        color: var(--UHC-Interactive-Interactive-Active, #196ECF);
+        font-family: "UHC2020Sans";
+        font-size: 16px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    #getCertifiedRoot .link:hover {
+        text-decoration: underline;
+    }
+
+    /* Mobile Responsive Design */
+    @media (max-width: 768px) {
+        #getCertifiedRoot {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+        #getCertifiedRoot .container {
+            margin-left: 0;
+        }
+
+        #getCertifiedRoot .content-wrapper {
+            flex-direction: column;
+        }
+
+        #getCertifiedRoot .paragraph,
+        #getCertifiedRoot .links-container {
+            width: 100%;
+        }
+
+        #getCertifiedRoot .right-part {
+            width: 100%;
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
+        #getCertifiedRoot .links-container {
+            grid-template-columns: 1fr;
+        }
+
+        #getCertifiedRoot .link {
+            justify-content: center;
+            width: 100%;
+        }
+    }
+</style>
+
+<body>
+    <div id="getCertifiedRoot">
+        <div class="container1">
+            <h2 class="header">Get Certified</h2>
+            <div class="container">
+                <div class="content-wrapper">
+                    <!-- Paragraph (left part) -->
+                    <div class="left-part">
+                        <p class="paragraph">
+                            Certification modules, taken during your onboarding and annually after that, provide you with an overview of the Medicare program, an understanding of Medicare insurance options and the rules and regulations that guide your marketing and sales activities.
+                        </p>
+                    </div>
+
+                    <!-- Video Thumbnail (right part) -->
+                    <div class="right-part">
+                        <div class="video-thumbnail">
+                            <img alt="video with play button" src="<path-to-image>">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Links container (now below both paragraph and video) -->
+                <div class="links-container">
+                    <a class="link" href="about:blank" target="_blank">2025 Certification Instruction
+                        <svg xmlns=http://www.w3.org/2000/svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                        </svg>
+                    </a>
+                    <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / English
+                        <svg xmlns=http://www.w3.org/2000/svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                        </svg>
+                    </a>
+                    <a class="link" href="about:blank" target="_blank">2025 Certifications Decision Tree
+                        <svg xmlns=http://www.w3.org/2000/svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                        </svg>
+                    </a>
+                    <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / Espanol
+                        <svg xmlns=http://www.w3.org/2000/svg width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

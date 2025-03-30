@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Root Container */
+    #getCertifiedRoot {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    /* Outer Container */
+    .outer-Container {
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Header */
+    .header {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Inner Container (Flexbox for layout) */
+    .inner-Container {
+        display: flex;
+        flex-direction: row; /* Align links container and video container side by side */
+        justify-content: space-between; /* Add space between the two containers */
+        align-items: flex-start; /* Align items at the top */
+        width: 100%;
+        gap: 20px; /* Add spacing between links container and video container */
+    }
+
+    /* Paragraph */
+    .paragraph {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        width: 100%; /* Full width for paragraph */
+    }
+
+    /* Links Container */
+    .links-Container {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        width: 60%; /* Take 60% of the width */
+    }
+
+    /* Links Row */
+    .links-row {
+        margin-bottom: 15px;
+    }
+
+    /* Links */
+    .link {
+        text-decoration: none;
+        color: #196ECF;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .link svg {
+        fill: #196ECF;
+    }
+
+    /* Right Part (Video Container) */
+    .video-Container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35%; /* Take 35% of the width */
+        height: auto;
+        background-color: bisque;
+    }
+
+    .video-thumbnail img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Desktop View */
+    @media (min-width: 1025px) {
+        .inner-Container {
+            flex-direction: row; /* Align links container and video container side by side */
+            justify-content: space-between; /* Add space between the two containers */
+            align-items: flex-start; /* Align items at the top */
+            gap: 20px; /* Add spacing between links container and video container */
+        }
+
+        .paragraph {
+            width: 100%; /* Full width for paragraph */
+        }
+
+        .links-Container {
+            width: 60%; /* Take 60% of the width */
+        }
+
+        .video-Container {
+            width: 35%; /* Take 35% of the width */
+        }
+    }
+
+    /* Tablet/Medium Screen View (Max-width: 1024px) */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .inner-Container {
+            flex-direction: column; /* Stack links container and video container vertically */
+            gap: 20px;
+        }
+
+        .links-Container,
+        .video-Container {
+            width: 100%; /* Take full width */
+        }
+    }
+
+    /* Mobile View (Max-width: 768px) */
+    @media (max-width: 768px) {
+        .inner-Container {
+            flex-direction: column; /* Stack links container and video container vertically */
+            gap: 20px;
+        }
+
+        .links-Container,
+        .video-Container {
+            width: 100%; /* Take full width */
+        }
+
+        .video-Container {
+        order: 2; /* Ensure video comes after paragraph and before links */
+        width: 100%; /* Take full width */
+    }
+
+    /* Links container should come after the video */
+    .links-Container {
+        order: 3; /* Ensure links come after the video container */
+        width: 100%; /* Take full width */
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Space between links */
+    }
+    }
+</style>
+
+<body>
+    <div id="getCertifiedRoot">
+        <div class="outer-Container">
+            <h2 class="header">Get Certified</h2>
+            <div class="inner-Container">
+                <!-- Paragraph -->
+                <p class="paragraph">
+                    Certification modules, taken during your onboarding and annually after that, provide you with an overview of the Medicare program, an understanding of Medicare insurance options and the rules and regulations that guide your marketing and sales activities.
+                </p>
+
+                <!-- Links Container -->
+                <div class="links-Container">
+                    <!-- Row 1 - First 2 links -->
+                    <div class="links-row">
+                        <a class="link" href="about:blank" target="_blank">2025 Certification Instruction
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / English
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Row 2 - Second 2 links -->
+                    <div class="links-row">
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications Decision Tree
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / Espanol
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Video Container -->
+                <div class="video-Container">
+                    <div class="video-thumbnail">
+                        <img src="https://via.placeholder.com/800x400" alt="Video Thumbnail" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

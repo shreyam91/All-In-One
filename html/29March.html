@@ -1,0 +1,245 @@
+<style>
+    #getcertifiedRoot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #getcertifiedRoot .container1 {
+    width: 1152px;
+    height: 289px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: var(--UHC-Neutrals-Gray-1, #FAFAFA);
+    
+    }
+    #getcertifiedRoot .header{
+        color: #002677;
+    font-feature-settings: 'liga' off, 'clig' off;
+    
+    font-family: "UHC2020Sans";
+    font-size: 22.78px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px; /* 122.915% */
+    margin-left: 20px;
+    }
+    #getcertifiedroot .paragraph{
+    display: flex;
+    height: 59px;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+    color: var(--UHC-Neutrals-Gray-9, #212223);
+    
+    font-family: "UHC2020Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 125% */
+    }
+     #getcertifiedroot .container{
+        display: flex;
+        justify-content: space-between;
+        height: auto;
+        margin-left: 20px;
+    } 
+    #getcertifiedroot .links-container{
+    width: 787px;
+    height: 122px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: #FFF;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-bottom: 24px;
+    gap: 10px;
+    }
+    #getcertifiedroot .link{
+    display: flex;
+    width: 296px;
+    padding: 9px 0px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: var(--UHC-Interactive-Interactive-Active, #196ECF);
+    font-feature-settings: 'liga' off, 'clig' off;
+    
+    /* Enterprise/P/MD|Med */
+    font-family: "Enterprise Sans VF";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 125% */
+    margin-left: 20px;
+    }
+    #getcertifiedroot .link svg{
+    
+    height: 27px;
+    align-items: center;
+    gap: 4px;
+    }
+     #getcertified .video-thumbnail{
+    width: 268px;
+    height: 197px;
+    flex-shrink: 0;
+    /*margin-bottom: 24px; */
+    
+    } 
+    #getcertifiedroot .right-part{
+    width: 268px;
+    height: 197px;
+    margin-bottom: 24px;
+    margin-right: 24px;
+    background: gold;
+    flex-shrink: 0;
+    }
+    #getcertifiedroot .left-part{
+        width: 796px;
+        margin-top: -14px;
+    } 
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: row; /* Align items in a row */
+        gap: 20px; /* Add spacing between the links container and the right part */
+        padding-right: 20px;
+        justify-content: space-between; /* Ensure proper spacing between elements */
+        align-items: flex-start; /* Align items at the top */
+    }
+
+    #getcertifiedRoot .video-thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image fits properly */
+    }
+
+    /* Medium screen (tablet) layout */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        #getcertifiedRoot .container1 {
+            width: 712px;
+            height: 400px;
+            padding: 20px;
+            overflow: hidden; /* Prevent content from spilling out */
+        }
+
+        #getcertifiedRoot .container {
+            flex-direction: column; /* Stack elements vertically */
+            align-items: center;
+        }
+
+        #getcertifiedRoot .left-part {
+            width: 100%;
+            margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #getcertifiedRoot .paragraph {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: row; /* Align links container and video thumbnail side by side */
+            justify-content: space-between; /* Distribute space between the two elements */
+            align-items: flex-start; /* Align items at the top */
+            gap: 20px; /* Add spacing between the links container and video thumbnail */
+            width: 100%; /* Ensure it spans the full width */
+        }
+
+        #getcertifiedRoot .links-container {
+            width: 60%; /* Adjust width for the links container */
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for links */
+            grid-template-rows: repeat(4, 1fr); /* Four rows for links */
+            gap: 10px; /* Add spacing between links */
+            padding: 16px;
+            background: #FFF;
+            border-radius: 4px;
+        }
+
+        #getcertifiedRoot .link {
+            width: auto;
+            padding: 5px 0;
+            margin-left: 10px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #getcertifiedRoot .link svg {
+            height: 20px;
+            width: 20px;
+            flex-shrink: 0;
+        }
+
+        #getcertifiedRoot .right-part {
+            width: 35%; /* Adjust width for the video thumbnail */
+            height: auto; /* Allow height to adjust automatically */
+            flex-shrink: 0; /* Prevent shrinking */
+            background: #008295; /* Placeholder background */
+            border-radius: 4px;
+        }
+
+        #getcertifiedRoot .video-thumbnail {
+            width: 100%;
+            height: 100%;
+        }
+
+        #getcertifiedRoot .video-thumbnail img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; /* Ensure the image fits properly */
+        }
+    }
+</style>
+    
+<div id="getcertifiedRoot">
+    <div class="container1">
+        <h2 class="header">Get Certified</h2>
+        <div class="container">
+            <div class="left-part">
+                <p class="paragraph">
+                    Certification modules, taken during your onboarding and annually after that, provide you with an
+                    overview of the Medicare program, an understanding of Medicare insurance options and the rules
+                    and regulations that guide your marketing and sales activities.
+                </p>
+                <!-- <div class="tablet"> -->
+                <!-- <div class="content-wrapper"> -->
+                    <div class="links-container">
+                        <a  class="link" href="about:blank" target="_blank">2025 Certification Instruction
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                              </svg></a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / English
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                              </svg></a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications Decision Tree
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                              </svg></a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / Espanol
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                              </svg></a>
+                    </div>
+                    <!-- Video Thumbnail (right part) -->
+                <div class="right-part">
+                    <div class="video-thumbnail">
+                        <img alt="video with play button" src="<path-to-image>">
+                    </div>
+                </div>
+            <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+

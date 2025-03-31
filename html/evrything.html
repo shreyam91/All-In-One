@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab View Design</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #getcertifiedRoot {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container1 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .header {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .paragraph {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .link {
+            font-size: 1rem;
+            color: #196ecf;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .link svg {
+            margin-left: 10px;
+        }
+
+        .right-part {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .video-thumbnail {
+            width: 300px;
+            height: 170px;
+            background-color: #ddd;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Desktop View */
+        @media (min-width: 1024px) {
+            .container1 {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .links-container {
+                width: 30%;
+            }
+
+            .right-part {
+                width: 65%;
+            }
+
+            .paragraph {
+                order: -1; /* Move the paragraph to the top */
+            }
+        }
+
+        /* Tablet View */
+        @media (max-width: 1023px) and (min-width: 600px) {
+            .container1 {
+                display: flex;
+                flex-direction: column; /* Stack paragraph, links, and video vertically */
+                gap: 20px;
+            }
+
+            .paragraph {
+                width: 100%;
+                order: -1; /* Keep the paragraph at the top */
+            }
+
+            .links-container {
+                width: 50%; 
+                
+            }
+
+            .right-part {
+                width: 50%; /* Full width for the video container */
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 599px) {
+            .container1 {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .links-container {
+                margin-top: 20px;
+            }
+
+            .right-part {
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            .paragraph {
+                order: -1; /* Keep the paragraph at the top */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="getcertifiedRoot">
+        <h2 class="header">Get Certified</h2>
+        <div class="container1">
+            <!-- paragraph ...  -->
+            <p class="paragraph">
+                Certification modules, taken during your onboarding and annually after that, provide you with an overview of the Medicare program, an understanding of Medicare insurance options, and the rules and regulations that guide your marketing and sales activities.
+            </p>
+
+            <!-- video....  -->
+            <div class="right-part">
+                <div class="video-thumbnail">
+                    <img alt="video with play button" src="<path-to-video-thumbnail>">
+                </div>
+            </div>
+
+            <!-- links...  -->
+            <div class="links-container">
+                <a class="link" href="about:blank" target="_blank">2025 Certification Instruction
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                    </svg>
+                </a>
+                <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / English
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                    </svg>
+                </a>
+                <a class="link" href="about:blank" target="_blank">2025 Certifications Decision Tree
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                    </svg>
+                </a>
+                <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / Espanol
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

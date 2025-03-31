@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile View Design</title>
+    <style>
+        /* General Styles */
+        #getcertifiedRoot {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        #getcertifiedRoot .container1 {
+            width: 1152px;
+            height: auto; /* Allow dynamic height for mobile */
+            flex-shrink: 0;
+            border-radius: 4px;
+            background: #FAFAFA;
+        }
+
+        #getcertifiedRoot .header {
+            color: #002677;
+            font-feature-settings: 'liga' off, 'clig' off;
+            font-family: "UHC2020Sans";
+            font-size: 22.78px;
+            font-weight: 700;
+            line-height: 28px;
+            margin-left: 20px;
+        }
+
+        #getcertifiedRoot .paragraph {
+            display: flex;
+            height: auto;
+            flex-direction: column;
+            justify-content: center;
+            color: #212223;
+            font-family: "UHC2020Sans";
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 16px; /* Space between paragraph and next elements */
+            width: 787px;
+        }
+
+        #getcertifiedRoot .container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-left: 20px;
+            flex-direction: row;
+        }
+
+        /* Links container */
+        #getcertifiedRoot .links-container {
+            width: 787px;
+            background: #FFF;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        /* Link styles */
+        #getcertifiedRoot .link {
+            display: flex;
+            padding: 9px 0;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+            color: #196ECF;
+            font-family: "Enterprise Sans VF";
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 20px;
+            margin-left: 20px;
+        }
+
+        #getcertifiedRoot .link svg {
+            height: 27px;
+            align-items: center;
+            gap: 4px;
+        }
+
+        #getcertifiedRoot .right-part {
+            width: 268px;
+            height: 197px;
+            margin-bottom: 24px;
+            background: url('<path-to-image>') lightgray no-repeat;
+            background-size: cover;
+        }
+
+        /* Media Queries for Mobile */
+
+        /* Mobile View (Max-width: 768px) */
+        @media (max-width: 768px) {
+            #getcertifiedRoot .container1 {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            #getcertifiedRoot .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #getcertifiedRoot .left-part,
+            #getcertifiedRoot .right-part {
+                width: 100%;
+                margin: 0;
+            }
+
+            #getcertifiedRoot .right-part {
+                order: 2; 
+                margin-bottom: 20px; 
+            }
+
+            #getcertifiedRoot .links-container {
+                order: 3; 
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            #getcertifiedRoot .video-thumbnail {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="getcertifiedRoot">
+        <div class="container1">
+            <h2 class="header">Get Certified</h2>
+            <div class="container">
+                <div class="left-part">
+                    <p class="paragraph">
+                        Certification modules, taken during your onboarding and annually after that, provide you with an overview of the Medicare program, an understanding of Medicare insurance options, and the rules and regulations that guide your marketing and sales activities.
+                    </p>
+                    <div class="links-container">
+                        <a class="link" href="about:blank" target="_blank">2025 Certification Instruction
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / English
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications Decision Tree
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                        <a class="link" href="about:blank" target="_blank">2025 Certifications User Guide / Espanol
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <path d="M19 19.5H5V5.5H12V3.5H5C3.89 3.5 3 4.4 3 5.5V19.5C3 20.6 3.89 21.5 5 21.5H19C20.1 21.5 21 20.6 21 19.5V12.5H19V19.5ZM14 3.5V5.5H17.59L7.76 15.33L9.17 16.74L19 6.91V10.5H21V3.5H14Z" fill="#196ECF"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="right-part">
+                    <div class="video-thumbnail">
+                        <img alt="video with play button" src="<path-to-video-thumbnail>">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

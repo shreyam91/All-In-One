@@ -5,12 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certification Paths</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-            padding: 0;
-        }
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+table {
+    width: 100%;
+    min-width: 800px; /* Set a minimum width so that the table doesn't collapse */
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #004A98;
+    color: white;
+}
+
+.highlight {
+    background: #FFC107;
+    font-weight: bold;
+}
+
+.fast-track {
+    position: relative;
+    background: #FFC107;
+    color: black;
+    font-weight: bold;
+}
+
+.standard {
+    background: #89CFF0;
+}
+
+.ahip,
+.nabip {
+    background: #ccc;
+}
+
+.left-column {
+    font-weight: bold;
+    background: #f1f1f1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.base-level {
+    width: 340px;
+    height: 72px;
+    border-radius: 4px 0px 0px 0px;
+    background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+    padding: 12px 15px 12px 25px;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--Main-brand-primary, #002677);
+    font-family: "Enterprise Sans VF";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.para-base,
+.para-next {
+    color: var(--Main-brand-primary, #002677);
+    font-family: "Enterprise Sans VF";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
+
+.level-next {
+    display: flex;
+    color: var(--Main-brand-primary, #002677);
+    font-family: "Enterprise Sans VF";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.next-container {
+    background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+}
+
+.row-next {
+    background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+}
+
+.row {
+    background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.svg-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.svg-heading {
+    position: relative;
+    display: inline-block;
+    width: 165px;
+    height: 33px;
+}
+
+.svg-heading svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.svg-heading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    text-align: center;
+}
+
         .certification-title {
             background: white;
             color: #004A98;
@@ -195,7 +331,7 @@
             background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
         }
         .row-next{
-            background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+            /* background: var(--UHC-Neutrals-Gray-3, #E5E5E6); */
         }
 
         .row {
@@ -237,6 +373,52 @@
             white-space: nowrap;
             text-align: center; 
         }
+
+
+        /* Mobile and Tablet responsiveness */
+@media (max-width: 768px) {
+    table {
+        min-width: 600px; /* Adjust the min-width for smaller screens */
+    }
+
+    .left-column {
+        padding-left: 10px;
+    }
+
+    .para-next {
+        font-size: 12px;
+    }
+
+    .svg-heading span {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        min-width: 500px; /* Adjust the min-width even further for small screens */
+    }
+
+    .table-container {
+        padding: 0 10px; /* Add some padding to ensure content isn't squished */
+    }
+
+    th, td {
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    .para-next {
+        font-size: 12px; /* Reduce font size */
+    }
+
+    .svg-heading span {
+        font-size: 10px; /* Reduce the size of the text inside SVG */
+    }
+
+    .left-column {
+        padding-left: 5px; /* Adjust left padding for better readability */
+    }
+}
     </style>
 
 </head>
@@ -414,10 +596,10 @@
                     </p>
                     
                 </td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td class="svg-fastrack"></td>
+                <td class="next-container"></td>
+                <td class="next-container"></td>
+                <td class="next-container"></td>
             </tr>
             <tr>
                 <td class="left-column">D-SNP /C-SNP Assessment</td>

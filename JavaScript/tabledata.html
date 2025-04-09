@@ -145,7 +145,7 @@ th {
 
 .certification-title, .title-container {
     background: white;
-    color: #004A98;
+    color: #00983f;
     padding: 15px;
     font-size: 18px;
     font-weight: bold;
@@ -158,7 +158,7 @@ th {
 }
 
 .title-container {
-    background: #04163F;
+    background: #043f22;
     color: #004A98;
     display: flex;
     flex-direction: column;
@@ -166,6 +166,18 @@ th {
     align-items: center;
     margin: 0 auto;
     position: relative;
+
+}
+
+.title-container::before {
+    content: "";
+    position: absolute;
+    top: 1px; 
+    left: 0;
+    width: 20px; 
+    height: 20px;
+    background: #043f22; 
+    z-index: 1; 
 }
 
 .title-container svg {
@@ -174,6 +186,8 @@ th {
     top: 0%;
     transform: translateY(-50%);
 }
+
+
 
 .para {
     width: 308px;
@@ -306,9 +320,12 @@ tr:nth-child(odd) .svg-nabip {
                 <th class="certification-title">
                     <h2>2026 Certification Paths</h2>
                     <div class="title-container">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="#0000FF">
-                            <path d="M0 15.2188L16.1066 0.26728V30.1702L0 15.2188Z" fill="#04163F"/>
-                        </svg>
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="31" viewBox="0 0 17 31" fill="#0000FF">
+                                <path d="M0 15.2188L16.1066 0.26728V30.1702L0 15.2188Z" fill="#04163F"/>
+                            </svg>
+                          
+                        
                         <p class="para">Choose your preferred certification path, <span class="sub-para">you <br> only need to
                             complete one path to certify!</span></p>
                     </div>

@@ -1,0 +1,846 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+
+
+<style>
+    body {
+        font-family: "UHC2020Sans";
+        background-color: #f8f8f8;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    table tbody td {
+        border-top: 1px solid #dadbdc;
+        padding: 20px;
+        white-space: normal;
+        padding-bottom: 20px !important;
+    }
+
+    #getCertifiedTableRoot {
+        position: relative;
+    }
+
+
+    #getCertifiedTableRoot .certification-title {
+        background: white;
+        color: #004A98;
+        padding: 15px;
+        font-size: 18px;
+        font-weight: bold;
+        /* width: 372px !important; */
+        width: 100%;
+        height: 100%;
+        /* position: relative; */
+        flex-direction: none;
+        align-items: center;
+        justify-content: center;
+        place-items: center;
+        height: 176px;
+        overflow: visible;
+    }
+
+    #getCertifiedTableRoot .title-container {
+        background: #002677;
+        color: #004A98;
+        padding: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        width: 372px;
+        height: 85.438px;
+        display: inline-block;
+        border-radius: 4px 4px 4px 4px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 8px;
+        box-sizing: border-box;
+        left: -20px;
+        top: 80px;
+        overflow: visible;
+        position: absolute;
+    }
+
+
+
+
+    #getCertifiedTableRoot .title-container::before {
+        content: "";
+        position: absolute;
+        top: 1px;
+        left: 0;
+        width: 25px;
+        height: 20px;
+        background: #002677;
+        z-index: 1;
+    }
+
+    #getCertifiedTableRoot .title-container svg {
+        margin-left: 0px !important;
+        width: 43.65px !important;
+        height: 35.65px !important;
+        top: -16.5px;
+        left: -10px;
+        position: absolute;
+    }
+
+    #getCertifiedTableRoot .para {
+        width: 308px;
+        flex-shrink: 0;
+        border-radius: 4px;
+        color: white;
+        font-weight: 400;
+        font-family: "UHC2020Sans";
+        font-size: 14px;
+        font-style: normal;
+        line-height: 18px;
+        text-align: center;
+        margin: 0;
+    }
+
+    #getCertifiedTableRoot .sub-para {
+        font-weight: 700;
+        text-align: center;
+    }
+
+    /*Even rows bg dark color*/
+    #getCertifiedTableRoot tr:nth-child(even) .svg-fastrack {
+        background-color: rgba(245, 183, 0, 0.30);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(even) .svg-standard {
+        background-color: rgba(204, 242, 247, 0.30);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(even) .svg-ahip {
+        background-color: rgba(146, 148, 150, 0.30);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(even) .svg-nabip {
+        background-color: rgba(203, 204, 205, 0.30);
+    }
+
+    /*odd rows bg lightcolor*/
+    #getCertifiedTableRoot tr:nth-child(odd) .svg-fastrack {
+        background-color: rgba(245, 183, 0, 0.10);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(odd) .svg-standard {
+        background-color: rgba(204, 242, 247, 0.10);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(odd) .svg-ahip {
+        background-color: rgba(146, 148, 150, 0.10);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(odd) .svg-nabip {
+        background-color: rgba(203, 204, 205, 0.10);
+    }
+
+    #getCertifiedTableRoot .table-containerUp {
+        margin-top: 20px;
+        overflow-x: auto;
+    }
+
+    #getCertifiedTableRoot .table-containerDown {
+        margin-top: 20px;
+        overflow-x: auto;
+    }
+
+    #getCertifiedTableRoot table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    #getCertifiedTableRoot th,
+    td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: start;
+    }
+
+    #getCertifiedTableRoot th {
+        background: #004A98;
+        color: white;
+    }
+
+    #getCertifiedTableRoot .highlight {
+        background: #FFC107;
+        font-weight: bold;
+    }
+
+    #getCertifiedTableRoot .fast-track {
+        position: relative;
+        background: #FFC107;
+        color: #002677;
+        font-weight: bold;
+        width: 189px;
+    }
+
+    #getCertifiedTableRoot .standard {
+        background: #89CFF0;
+        width: 189px;
+        color: #002677;
+    }
+
+    #getCertifiedTableRoot .ahip {
+        background: var(--UHC-Neutrals-Gray-5, #929496);
+        width: 189px;
+    }
+
+    #getCertifiedTableRoot .nabip {
+        border-radius: 0px 3px 0px 0px;
+        background: var(--UHC-Neutrals-Gray-4, #CBCCCD);
+        width: 189px;
+        color: #002677;
+    }
+
+    #getCertifiedTableRoot .left-column {
+        font-weight: bold;
+        text-align: left;
+        padding-bottom: 20px !important;
+    }
+
+    #getCertifiedTableRoot tr:nth-child(odd) .left-column {
+        background-color: rgba(241, 241, 241, 1);
+    }
+
+    #getCertifiedTableRoot tr:nth-child(even) .left-column {
+        background-color: rgba(241, 241, 241, 0.10);
+    }
+
+    #getCertifiedTableRoot .base-level {
+        width: 372px;
+        height: 72px;
+        border-radius: 4px 0px 0px 0px;
+        background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+        justify-content: flex-end;
+        align-items: center;
+        color: var(--Main-brand-primary, #002677);
+        font-family: "UHC2020Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    #getCertifiedTableRoot .para-base {
+        color: var(--Main-brand-primary, #002677);
+        font-family: "UHC2020Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    #getCertifiedTableRoot .para-next {
+        color: var(--Main-brand-primary, #002677);
+        font-family: "UHC2020Sans";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        text-align: start;
+        padding-left: 0px !important;
+    }
+
+    #getCertifiedTableRoot .level-next {
+        display: flex;
+        color: var(--Main-brand-primary, #002677);
+        font-family: "UHC2020Sans";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+    }
+
+    #getCertifiedTableRoot .next-container {
+        background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+    }
+
+    #getCertifiedTableRoot .row-next {
+        background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+    }
+
+    #getCertifiedTableRoot .row {
+        background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    #getCertifiedTableRoot .svg-icon {
+        position: absolute;
+        top: -4px;
+        left: -1px;
+    }
+
+    #getCertifiedTableRoot .svg-icon svg {
+        width: 100% !important;
+        position: relative;
+        left: -5%;
+        height: 50px !important;
+        margin-left: 0px !important;
+    }
+
+    #getCertifiedTableRoot .svg-heading {
+        position: relative;
+        display: inline-block;
+        width: 165px;
+        height: 33px;
+    }
+
+    #getCertifiedTableRoot .svg-heading svg {
+        position: absolute;
+        left: 0px;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    #getCertifiedTableRoot .svg-heading span {
+        position: absolute;
+        margin-top: 10%;
+        left: 70px;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    #getCertifiedTableRoot .svg-side {
+        transform: rotate(-78.301deg);
+        height: 10px;
+        width: 8.5px;
+        position: relative;
+        left: -45%;
+        top: -17px;
+    }
+
+    #getCertifiedTableRoot .svg-up {
+        flex-shrink: 0;
+        position: absolute;
+        top: -23px;
+        height: 10px;
+        width: 7.4px;
+        left: 47px;
+    }
+
+    #getCertifiedTableRoot .certification-path {
+        font-size: 25.63px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 32px;
+        font-family: "UHC2020Sans";
+        margin-top: -53px;
+        margin-left: -84px;
+    }
+
+    /* Mobile and Tablet Responsiveness */
+    @media (max-width: 768px) {
+        #getCertifiedTableRoot .table-containerUp,
+        #getCertifiedTableRoot .table-containerDown {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        #getCertifiedTableRoot table {
+            width: 100%;
+        }
+
+        #getCertifiedTableRoot .certification-title,
+        #getCertifiedTableRoot .title-container {
+            width: 100%;
+            height: auto;
+            padding: 10px;
+        }
+
+        #getCertifiedTableRoot .fast-track,
+        .standard,
+        .ahip,
+        .nabip {
+            width: 100%;
+        }
+
+        #getCertifiedTableRoot .level-next {
+            font-size: 14px;
+        }
+
+        #getCertifiedTableRoot .certification-path {
+            font-size: 18px;
+        }
+
+        #getCertifiedTableRoot .para-base {
+            font-size: 13px;
+        }
+
+        #getCertifiedTableRoot .para-next {
+            font-size: 12px;
+        }
+    }
+/* Tablet...  */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        #getCertifiedTableRoot .table-containerUp,
+        #getCertifiedTableRoot .table-containerDown {
+            width: 90%;
+        }
+
+        #getCertifiedTableRoot {
+        position: relative;
+    }
+
+        #getCertifiedTableRoot .certification-title{
+        /* position: relative; */
+
+        }
+        #getCertifiedTableRoot .title-container {
+            width: 233px;
+            height: 120px;
+            width: 100%;
+            height: auto;
+            padding: 15px;
+            position: absolute;
+            left: -20px;
+        }
+    }
+
+    /* Styles for tab view (devices with max-width: 768px) */
+/* @media (max-width: 768px) {
+    #getCertifiedTableRoot .certification-title {
+        font-size: 16px;
+        padding: 12px;
+        height: auto;
+        position: relative;
+    }
+
+    #getCertifiedTableRoot .title-container {
+        width: 100%;
+        height: auto;
+        padding: 15px;
+        font-size: 16px;
+        left: 0;
+        top: 60px; 
+    }
+} */
+</style>
+
+
+
+
+<div id="getCertifiedTableRoot">
+
+
+
+    <div class="table-containerUp">
+
+        <table>
+
+            <tr>
+
+                <th class="certification-title">
+
+                    <h2 class="certification-path">${properties.tableHeading}</h2>
+
+                    <div class="title-container">
+
+                        <svg xmlns=http://www.w3.org/2000/svg width="17" height="31" viewBox="0 0 17 31" fill="none">
+
+                            <path d="M0 15.2188L16.1066 0.26728V30.1702L0 15.2188Z" fill="#04163F" />
+
+                        </svg>
+
+                        <p class="para">${properties.headingContent} <span
+                                class="sub-para">${properties.tableDescription1} <br>
+
+                                ${properties.tableDescription2}</span></p>
+
+                    </div>
+
+                </th>
+
+
+
+                <th class="fast-track">
+
+                    <div class="svg-icon">
+
+                        <svg xmlns=http://www.w3.org/2000/svg width="77" height="72" viewBox="0 0 77 72" fill="none">
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.635657 40.2972L42.6047 0.917039L76.6385 1.03874L0.69295 71.4308L0.635657 40.2972Z"
+                                fill="#FF6814" />
+
+                            <text x="10" y="50" font-family="Arial" font-size="14" fill="#FFFFFF"
+                                transform="rotate(-45 10,40)">Fastest</text>
+
+                        </svg>
+
+                        <div class="svg-side">
+
+                            <svg xmlns=http://www.w3.org/2000/svg width="9" height="5" viewBox="0 0 9 5" fill="04163F">
+
+                                <path d="M4.64856 0.935676L8.64831 4.73388L0.508325 4.73392L4.64856 0.935676Z"
+                                    fill="#04163F" />
+
+                            </svg>
+                        </div>
+
+                        <div class="svg-up">
+
+                            <svg xmlns=http://www.w3.org/2000/svg width="9" height="5" viewBox="0 0 9 5" fill="none">
+
+                                <path d="M4.64856 0.935676L8.64831 4.73388L0.508325 4.73392L4.64856 0.935676Z"
+                                    fill="#04163F" />
+
+                            </svg>
+
+                        </div>
+
+
+
+
+
+                    </div>
+
+                    <div class="svg-heading">
+
+                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+
+                        </svg>
+
+                        <span>${properties.fasttrack}</span>
+
+                    </div>
+
+                </th>
+
+
+
+
+
+
+
+                <th class="standard">
+
+
+
+                    <div class="svg-heading">
+
+                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+
+                        </svg>
+
+                        <span>${properties.standard}</span>
+
+                    </div>
+
+                </th>
+
+
+
+                <th class="ahip">
+
+                    <div class="svg-heading">
+
+                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+
+
+
+                        </svg>
+
+                        <span>${properties.ahip}</span>
+
+                    </div>
+
+                </th>
+
+
+
+                <th class="nabip">
+
+                    <div class="svg-heading">
+
+                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
+                                fill="#002677" />
+
+
+
+                        </svg>
+
+                        <span>${properties.nabip}</span>
+
+                    </div>
+
+                </th>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td class="left-column">${properties.row1d1}</td>
+
+                <td class="svg-fastrack">${properties.row1d2}</td>
+
+                <td class="svg-standard">${properties.row1d3}</td>
+
+                <td class="svg-ahip">${properties.row1d4}</td>
+
+                <td class="svg-nabip">${properties.row1d5}</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td class="left-column">${properties.row2d1}</td>
+
+                <td class="svg-fastrack">${properties.row2d2}</td>
+
+                <td class="svg-standard">${properties.row2d3}</td>
+
+                <td class="svg-ahip">${properties.row2d4}</td>
+
+                <td class="svg-nabip">${properties.row2d5}</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td class="left-column">${properties.row3d1}</td>
+
+                <td class="svg-fastrack">${properties.row3d2}</td>
+
+                <td class="svg-standard">${properties.row3d3}</td>
+
+                <td class="svg-ahip">${properties.row3d4}</td>
+
+                <td class="svg-nabip">${properties.row3d5}</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td class="left-column">${properties.row4d1}</td>
+
+                <td class="svg-fastrack">${properties.row4d2}</td>
+
+                <td class="svg-standard">${properties.row4d3}</td>
+
+                <td class="svg-ahip">${properties.row4d4}</td>
+
+                <td class="svg-nabip">${properties.row4d5}</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td class="left-column">${properties.row5d1}</td>
+
+                <td class="svg-fastrack">${properties.row5d2}</td>
+
+                <td class="svg-standard">${properties.row5d3}</td>
+
+                <td class="svg-ahip">${properties.row5d4}</td>
+
+                <td class="svg-nabip">${properties.row5d5}</td>
+
+            </tr>
+
+
+
+        </table>
+
+    </div>
+
+
+
+    <div class="table-containerDown">
+
+
+
+        <table>
+
+
+
+            <tr>
+
+                <td class="base-level">
+
+                    <p class="para-next"> <span class="level-next">${properties.baseLevel}</span>
+
+                        ${properties.baseLevel1}
+
+                    </p>
+
+
+
+                </td>
+
+
+
+                <td class="fast-track1">${properties.t2fasttrack}</td>
+
+                <th class="standard1">${properties.t2standard}</th>
+
+                <th class="ahip1">${properties.t2ahip}</th>
+
+                <th class="nabip1 ">${properties.t2nabip}</th>
+
+            </tr>
+
+
+
+            <tr>
+
+
+
+                <td class="left-column">${properties.t2r1d1}</td>
+
+                <td class="svg-fastrack">${properties.t2r1d2}</td>
+
+                <td class="svg-standard">${properties.t2r1d3}</td>
+
+                <td class="svg-ahip">${properties.t2r1d4}</td>
+
+                <td class="svg-nabip">${properties.t2r1d5}</td>
+
+
+
+            </tr>
+
+
+
+            <tr>
+
+
+
+                <td class="left-column">${properties.t2r2d1}</td>
+
+                <td class="svg-fastrack"></td>
+
+                <td class="svg-standard">${properties.t2r2d3}</td>
+
+                <td class="svg-ahip">${properties.t2r2d4}</td>
+
+                <td class="svg-nabip">${properties.t2r2d5}</td>
+
+            </tr>
+
+
+
+            <tr>
+
+                <td class="left-column">${properties.t2r3d1}</td>
+
+                <td class="svg-fastrack"></td>
+
+                <td class="svg-standard">${properties.t2r3d3}</td>
+
+                <td class="svg-ahip">${properties.t2r3d4}</td>
+
+                <td class="svg-nabip">${properties.t2r3d5}</td>
+
+            </tr>
+
+
+
+            <tr class="row-next">
+
+                <td class="next-container">
+
+                    <p class="para-next"> <span class="level-next">${properties.nextLevel}</span>
+
+                        ${properties.nextLevel1}<br>${properties.nextLevel2}
+
+                    </p>
+
+
+
+                </td>
+
+                <td class="svg-fastrack"></td>
+
+                <td class="next-container"></td>
+
+                <td class="next-container"></td>
+
+                <td class="next-container"></td>
+
+            </tr>
+
+            <tr>
+
+                <td class="left-column">${properties.t2r5d1}</td>
+
+                <td class="svg-fastrack"></td>
+
+                <td class="svg-standard">${properties.t2r5d3}</td>
+
+                <td class="svg-ahip">${properties.t2r5d4}</td>
+
+                <td class="svg-nabip">${properties.t2r5d5}</td>
+
+            </tr>
+
+            <tr>
+
+                <td class="left-column">${properties.t2r6d1}</td>
+
+                <td class="svg-fastrack"></td>
+
+                <td class="svg-standard">${properties.t2r6d3}</td>
+
+                <td class="svg-ahip">${properties.t2r6d4}</td>
+
+                <td class="svg-nabip">${properties.t2r6d5}</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+
+
+</div>
+
+</div>
+
+
+<!-- /* Media query for tablet view (600px to 1024px) */
+@media (max-width: 1024px) and (min-width: 600px) {
+    #getCertifiedTableRoot .title-container {
+        position: sticky; 
+        left: 0px; 
+        top: 87px; 
+        margin-top: 0; 
+        z-index: 10; 
+        box-sizing: border-box;
+        overflow: visible;
+        width: 100%;
+    }
+} -->

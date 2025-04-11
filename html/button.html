@@ -1,0 +1,200 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    :root {
+        --uhc-blue: #002677;
+        --uhc-white: #FFFFFF;
+        --uhc-gray-9: #212223;
+    }
+
+    .certificationBox {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+        padding: 0 16px;
+        box-sizing: border-box;
+        background-color: antiquewhite;
+    }
+
+    #certifiedTodayRoot,
+    #certificationStatusRoot {
+        flex: 1 1 300px;
+        max-width: 740px;
+        box-sizing: border-box;
+    }
+
+    .certification-left,
+    .certification {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-radius: 4px;
+        background: #EEF8FB;
+        padding: 16px;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+    }
+
+    .paragraph {
+        color: var(--uhc-gray-9);
+        font-family: "UHC2020Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .heading {
+        font-weight: 700;
+        color: var(--uhc-blue);
+        margin: 0 0 10px 0;
+        display: inline-block;
+    }
+
+    .button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 24px;
+        text-align: center;
+        font-family: "UHC2020Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        text-decoration: none;
+        margin-top: 16px;
+        height: 40px;
+        width: 240px;
+        box-sizing: border-box;
+    }
+
+    #certifiedTodayRoot .button {
+        background: var(--uhc-blue);
+        color: var(--uhc-white);
+        border: none;
+    }
+
+    #certificationStatusRoot .button {
+        border: 1px solid var(--uhc-blue);
+        background: var(--uhc-white);
+        color: var(--uhc-blue);
+    }
+
+    .link {
+        width: 100%;
+        text-decoration: none !important;
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+        .certificationBox {
+            flex-direction: row;
+        }
+
+        #certifiedTodayRoot,
+        #certificationStatusRoot {
+            flex: 1 1 45%;
+        }
+    }
+
+    /* @media (max-width: 768px) {
+        .certificationBox {
+            flex-direction: column;
+            gap: 20px;
+            
+        }
+
+        #certifiedTodayRoot .certification-left
+            {
+                width: auto; 
+                height: auto; 
+                margin-left: 0; 
+                margin-bottom: 20px; 
+            }
+            #certificationStatusRoot .certification {
+                width: auto; 
+                height: auto; 
+                margin-left: 0; 
+                margin-bottom: 20px; 
+            }
+
+        .paragraph,
+        .button {
+            width: 100%;
+            text-align: start;
+        }
+    } */
+
+
+    @media (max-width: 768px) {
+            .certificationBox {
+                flex-direction: column; 
+                align-items: center; 
+            }
+            #certifiedTodayRoot .certification-left
+            {
+                width: auto; 
+                height: auto; 
+                margin-left: 0; 
+                margin-bottom: 20px; 
+            }
+            #certificationStatusRoot .certification {
+                width: auto; 
+                height: auto; 
+                margin-left: 0; 
+                margin-bottom: 20px; 
+            }
+            #certifiedTodayRoot .paragraph{
+                margin-left: 0; 
+                text-align: start; 
+                width: auto;
+                height: 79px;
+            }
+            #certificationStatusRoot .paragraph {
+                margin-left: 0;
+                text-align: start;
+                width: auto;
+                height: 59px;
+            }
+            #certifiedTodayRoot .button,
+            #certificationStatusRoot .button {
+                width: auto;
+                height: 40px;
+                margin-left: 0;
+            }
+        }
+</style>
+
+<div class="certificationBox">
+
+    <div id="certifiedTodayRoot">
+        <div class="certification-left">
+            <p class="paragraph">
+                <span class="heading">Certfication status</span><br>
+                Compare certification path before launching learning lab to start your preferred path
+            </p>
+            <a class="link" href=${properties.gcLButtonPath} dtmid=${properties.gcLButtonDtmId} dtmname=${properties.gcLButtonDtmName} target=${properties.gcLButtonDtmtarget}>
+                <button class="button">Launch learning lab</button>
+            </a>
+        </div>
+    </div>
+
+    <div id="certificationStatusRoot">
+        <div class="certification">
+            <p class="paragraph">
+                <span class="heading">Certfication status</span><br>
+                Learn about products you are certified to sell
+            </p>
+            <a class="link" href=${properties.gcRButtonPath} dtmid=${properties.gcRButtonDtmId} dtmname=${properties.gcRButtonDtmName} target=${properties.gcRButtonDtmtarget}>
+                <button class="button">Launch learning lab</button>
+            </a>
+        </div>
+    </div>
+
+</div>

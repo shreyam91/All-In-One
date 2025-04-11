@@ -13,6 +13,7 @@
             display: flex;
             width: 1152px;
             height: 289px;
+            flex-wrap: wrap;
         }
 
         #getCertifiedRoot .title {
@@ -126,76 +127,67 @@
 
         @media (max-width: 480px) {
 
-            /* #getCertifiedRoot .container {
-
-                padding: 5px;
-            } */
-
-            /*mobile*/
-            #getCertifiedRoot .title {
-                /* width: 287px; */
+            #getCertifiedRoot .container {
                 width: 100%;
-                left: 12px;
-                top: 12px;
-                padding: 5px;
+                height: auto;
+                flex-direction: column;
+                padding: 12px;
+                position: relative;
+            }
+
+            #getCertifiedRoot .title {
+                width: 100%;
+                /* padding: 12px 0; */
+                position: relative;
+                left: 0;
+                top: 0;
+                font-size: 20px;
             }
 
             #getCertifiedRoot .description {
-                width: 287px;
-                height: 159px;
-                left: 12px;
-                top: 48px;
-                padding: 5px;
-            }
-
-            #getCertifiedRoot .content-box {
-                width: 287px !important;
-                height: 229px;
-                left: 12px;
-                top: 450px;
-                display: flex;
-                flex-direction: column;
-                padding: 5px;
-            }
-
-            #getCertifiedRoot .link {
-                display: flex;
-                padding: 9px 0px;
-                flex-direction: row;
-                align-items: center;
-                gap: 4px;
-                /* Adjusted gap for mobile view */
-                color: var(--UHC-Interactive-Interactive-Active, #196ECF);
-                font-feature-settings: 'liga' off, 'clig' off;
+                width: 100%;
+                height: auto;
+                padding: 12px 0;
+                position: relative;
+                left: 0;
+                top: 0;
                 font-size: 16px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 20px;
-                /* 125% */
-                margin-left: 20px;
-                text-decoration: none;
-            }
-
-            #getCertifiedRoot .link svg {
-                height: 27px;
-                align-items: center;
-                gap: 0px;
-                /* Removed gap for mobile view */
+                line-height: 22px;
             }
 
             #getCertifiedRoot .image {
-                width: 287px;
-                height: 213px;
-                left: 12px;
-                top: 223px;
-                padding: 5px;
+                width: 100%;
+                height: auto;
+                position: relative;
+                left: 0;
+                top: 0;
+                margin: 12px 0;
+                order: 2;
             }
 
-            #getCertifiedRoot .container {
-                width: 311px;
-                height: 691px;
-                flex-shrink: 0;
-                padding: 5px;
+            #getCertifiedRoot .content-box {
+                width: 100% !important;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                padding: 12px;
+                position: relative;
+                left: 0;
+                top: 0;
+                gap: 12px;
+                box-sizing: border-box;
+                order: 3;
+            }
+
+            #getCertifiedRoot .link {
+                font-size: 16px;
+                margin-left: 0;
+                padding: 8px 0;
+                gap: 6px;
+            }
+
+            #getCertifiedRoot .link svg {
+                height: 24px;
             }
         }
     </style>

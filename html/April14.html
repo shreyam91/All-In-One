@@ -7,12 +7,17 @@
         margin: 0;
         padding: 20px;
     }
+    #getCertifiedTableRoot table {
+    table-layout: fixed;
+}
+
 
     table tbody td {
         border-top: 1px solid #dadbdc;
         padding: 20px;
         white-space: normal;
         padding-bottom: 20px !important;
+        /* vertical-align: middle; */
     }
 
     #getCertifiedTableRoot {
@@ -129,11 +134,11 @@
         background-color: rgba(203, 204, 205, 0.10);
     }
 
-    #getCertifiedTableRoot .table-containerUp,
+    /* #getCertifiedTableRoot .table-containerUp,
     #getCertifiedTableRoot .table-containerDown {
         margin-top: 20px;
         overflow-x: auto;
-    }
+    } */
 
     #getCertifiedTableRoot table {
         width: 100%;
@@ -249,7 +254,7 @@
     #getCertifiedTableRoot .row-next,
     #getCertifiedTableRoot .row {
         background: var(--UHC-Neutrals-Gray-3, #E5E5E6);
-        display: flex;
+        /* display: flex; */
         align-items: center;
         flex-shrink: 0;
     }
@@ -371,33 +376,89 @@
             flex-shrink: 0;
         }
 
-
-
-    #getCertifiedTableRoot .svg-heading {
-        /* position: absolute; */
-        width: 122px;
-        height: 71px;
-        /* display: block; */
+        #getCertifiedTableRoot .table-containerUp,
+    #getCertifiedTableRoot .table-containerDown {
+        /* margin-top: 20px; */
+        /* overflow-x: auto; */
+        overflow-x: scroll;
     }
 
-    #getCertifiedTableRoot .svg-heading svg {
-        width: 100%;
-        height: 100%;
-        display: block;
-        position: relative;
-    }
 
-    #getCertifiedTableRoot .svg-heading span {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: white;
-        font-size: 13px;
+
+        #getCertifiedTableRoot .svg-heading {
+    position: relative;
+    width: 122px;
+    height: 71px;
+}
+
+#getCertifiedTableRoot .svg-heading svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: fill; /* Ensures SVG scales without distortion */
+}
+
+#getCertifiedTableRoot .svg-heading span {
+    width: 84px;
+    height: 55px;
+    /* position: absolute; */
+    top: 50%;
+    left: 40%;
+    /* transform: translate(-50%, -50%); */
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    /* white-space: nowrap; */
+    /* pointer-events: none; */
+    /* padding: 10px; */
+    text-align: start;
+}
+
+#getCertifiedTableRoot .table-containerUp .fast-track {
+        /* position: relative; */
+        background: #07ff24;
+        color: #002677;
         font-weight: bold;
-        white-space: nowrap;
-        pointer-events: none;
+        width: 138px !important; /* Not working */
+        height: 240px;
     }
+
+    #getCertifiedTableRoot .fast-track1{
+        background: #FFC107;
+        color: #002677;
+        font-weight: bold;
+        width: 138px; /* Not working */
+        vertical-align: top;
+    }
+
+    /* Force width on the actual table cell too */
+    #getCertifiedTableRoot td.fast-track,
+    #getCertifiedTableRoot td.fast-track1,
+    #getCertifiedTableRoot td.standard,
+    #getCertifiedTableRoot td.standard1,
+    #getCertifiedTableRoot td.ahip,
+    #getCertifiedTableRoot td.ahip1,
+    #getCertifiedTableRoot td.nabip,
+    #getCertifiedTableRoot td.nabip1 {
+        width: 138px !important;
+        max-width: 138px !important;
+        padding: 0 !important;
+    }
+
+    /* Force width on the inside div as well */
+    #getCertifiedTableRoot .fast-track,
+    #getCertifiedTableRoot .fast-track1,
+    #getCertifiedTableRoot .standard,
+    #getCertifiedTableRoot .standard1,
+    #getCertifiedTableRoot .ahip,
+    #getCertifiedTableRoot .ahip1,
+    #getCertifiedTableRoot .nabip,
+    #getCertifiedTableRoot .nabip1 {
+        width: 138px !important;
+        /* flex: 0 0 138px !important; */ 199 64 line height 28px
+        box-sizing: border-box;
+    }
+
 }
 
 
@@ -472,33 +533,33 @@
                     </div>
 
                     <div class="svg-heading">
-                        <!-- <svg xmlns=http://www.w3.org/2000/svg width="122" height="71" viewBox="0 0 165 33" fill="none">
-                            <path fill-rule="evenodd" clip-rule="evenodd" 
-                                  d="M0 0.0859375L 165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z" 
-                                  fill="#002677"/>
-                        </svg> -->
-
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 165 33" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 165 33"
+                             fill="none"
+                             preserveAspectRatio="none">
                             <path fill-rule="evenodd" clip-rule="evenodd" 
                                   d="M0 0.0859375L 165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z" 
                                   fill="#002677"/>
                         </svg>
-                        
-
                         <span>Fast Track</span>
                     </div>
+                    
+                    
                     
                     
                 </th>
 
                 <th class="standard">
                     <div class="svg-heading">
-                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 165 33"
+                             fill="none"
+                             preserveAspectRatio="none">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
                                 fill="#002677" />
                         </svg>
-                        <span>${properties.standard}</span>
+                        <span>STANDARD</span>
                     </div>
                 </th>
 
@@ -506,7 +567,10 @@
 
                     <div class="svg-heading">
 
-                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 165 33"
+                             fill="none"
+                             preserveAspectRatio="none">
 
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
@@ -516,7 +580,7 @@
 
                         </svg>
 
-                        <span>${properties.ahip}</span>
+                        <span>AHIP</span>
 
                     </div>
 
@@ -528,7 +592,10 @@
 
                     <div class="svg-heading">
 
-                        <svg xmlns=http://www.w3.org/2000/svg width="165" height="33" viewBox="0 0 165 33" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             viewBox="0 0 165 33"
+                             fill="none"
+                             preserveAspectRatio="none">
 
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M0 0.0859375L165 0.0859375L152.778 16.4689L140.129 32.8519H0V0.0859375Z"
@@ -538,7 +605,7 @@
 
                         </svg>
 
-                        <span>${properties.nabip}</span>
+                        <span>NABIP</span>
 
                     </div>
 
@@ -552,7 +619,7 @@
 
                 <td class="left-column">${properties.row1d1}</td>
 
-                <td class="svg-fastrack">${properties.row1d2}</td>
+                <td class="svg-fastrack">06/01/2025</td>
 
                 <td class="svg-standard">${properties.row1d3}</td>
 
@@ -568,7 +635,7 @@
 
                 <td class="left-column">${properties.row2d1}</td>
 
-                <td class="svg-fastrack">${properties.row2d2}</td>
+                <td class="svg-fastrack">Fast Track combines Base Level & Next Level Assessments into one</td>
 
                 <td class="svg-standard">${properties.row2d3}</td>
 

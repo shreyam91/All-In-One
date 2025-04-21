@@ -25,7 +25,6 @@
         box-sizing: border-box;
     }
 
-    .certification-left,
     .certification {
         display: flex;
         flex-direction: column;
@@ -36,7 +35,6 @@
         padding: 16px;
         box-sizing: border-box;
         width: 100%;
-        height: 100%;
     }
 
     .paragraph {
@@ -92,7 +90,7 @@
         text-decoration: none !important;
     }
 
-    @media (min-width: 769px) and (max-width: 1024px) {
+    /* @media (min-width: 769px) and (max-width: 1024px) {
         .certificationBox {
             flex-direction: row;
         }
@@ -101,83 +99,56 @@
         #certificationStatusRoot {
             flex: 1 1 45%;
         }
-    }
-
-    /* @media (max-width: 768px) {
-        .certificationBox {
-            flex-direction: column;
-            gap: 20px;
-            
-        }
-
-        #certifiedTodayRoot .certification-left
-            {
-                width: auto; 
-                height: auto; 
-                margin-left: 0; 
-                margin-bottom: 20px; 
-            }
-            #certificationStatusRoot .certification {
-                width: auto; 
-                height: auto; 
-                margin-left: 0; 
-                margin-bottom: 20px; 
-            }
-
-        .paragraph,
-        .button {
-            width: 100%;
-            text-align: start;
-        }
     } */
 
+    /* Mobile styles */
+@media (max-width: 767px) {
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: auto;
+        box-sizing: border-box;
+    }
 
-    @media (max-width: 768px) {
-            .certificationBox {
-                flex-direction: column; 
-                align-items: center; 
-            }
-            #certifiedTodayRoot .certification-left
-            {
-                width: auto; 
-                height: auto; 
-                margin-left: 0; 
-                margin-bottom: 20px; 
-            }
-            #certificationStatusRoot .certification {
-                width: auto; 
-                height: auto; 
-                margin-left: 0; 
-                margin-bottom: 20px; 
-            }
-            #certifiedTodayRoot .paragraph{
-                margin-left: 0; 
-                text-align: start; 
-                width: auto;
-                height: 79px;
-            }
-            #certificationStatusRoot .paragraph {
-                margin-left: 0;
-                text-align: start;
-                width: auto;
-                height: 59px;
-            }
-            #certifiedTodayRoot .button,
-            #certificationStatusRoot .button {
-                width: auto;
-                height: 40px;
-                margin-left: 0;
-            }
-        }
+    .certificationBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+    }
+
+    #certifiedTodayRoot,
+    #certificationStatusRoot {
+        width: auto;
+    }
+
+    #certifiedTodayRoot .certification,
+    #certificationStatusRoot .certification {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .paragraph {
+        text-align: start;
+        padding: 0 16px;
+    }
+
+    .button {
+        width: auto;
+        max-width: 287px;
+        max-height: 40px;
+    }
+}
+
+
 </style>
 
 <div class="certificationBox">
-
     <div id="certifiedTodayRoot">
-        <div class="certification-left">
+        <div class="certification">
             <p class="paragraph">
-                <span class="heading">Certfication status</span><br>
-                Compare certification path before launching learning lab to start your preferred path
+                <span class="heading">Certification status</span><br>
+                Compare certification path before launching learning lab to start your preferred path.
             </p>
             <a class="link" href=${properties.gcLButtonPath} dtmid=${properties.gcLButtonDtmId} dtmname=${properties.gcLButtonDtmName} target=${properties.gcLButtonDtmtarget}>
                 <button class="button">Launch learning lab</button>
@@ -188,13 +159,12 @@
     <div id="certificationStatusRoot">
         <div class="certification">
             <p class="paragraph">
-                <span class="heading">Certfication status</span><br>
-                Learn about products you are certified to sell
+                <span class="heading">Certification status</span><br>
+                Learn about products you are certified to sell.
             </p>
             <a class="link" href=${properties.gcRButtonPath} dtmid=${properties.gcRButtonDtmId} dtmname=${properties.gcRButtonDtmName} target=${properties.gcRButtonDtmtarget}>
                 <button class="button">Launch learning lab</button>
             </a>
         </div>
     </div>
-
 </div>

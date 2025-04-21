@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>YouTube Custom Player</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: white;
+      font-family: sans-serif;
+    }
+
+    .player-container {
+      position: relative;
+      width: 640px;
+      max-width: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 360px;
+      border: none;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      height: 8px;
+      background: #444;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: #1db954;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .controls {
+      background: #222;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .time-display {
+      font-family: monospace;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="player-container">
+    <div id="player"></div>
+    <div class="progress-bar-container" id="progressBarContainer">
+      <div class="progress" id="progressBar"></div>
+    </div>
+    <div class="controls">
+      <button onclick="player.playVideo()">▶</button>
+      <button onclick="player.pauseVideo()">⏸</button>
+      <button onclick="resetVideo()">⏮</button>
+      <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+      <button onclick="toggleMute(event)">🔊</button>
+      <button onclick="toggleFullscreen()">⛶</button>
+    </div>
+  </div>
+
+  <script>
+    let player;
+    let isMuted = false;
+    let duration = 0;
+
+    function formatTime(time) {
+      const minutes = Math.floor(time / 60);
+      const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+      return `${minutes}:${seconds}`;
+    }
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        videoId: 'h0KUHYSdONE', // Replace with your video ID
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        },
+        playerVars: {
+          controls: 0,
+          modestbranding: 1
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      const checkDuration = setInterval(() => {
+        duration = player.getDuration();
+        if (duration > 0) {
+          clearInterval(checkDuration);
+          updateTime();
+          setInterval(updateTime, 500);
+        }
+      }, 200);
+    }
+
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.PLAYING && duration === 0) {
+        duration = player.getDuration();
+      }
+    }
+
+    function updateTime() {
+      if (!player || typeof player.getCurrentTime !== 'function') return;
+
+      const current = player.getCurrentTime();
+      const percent = (current / duration) * 100;
+
+      document.getElementById('timeDisplay').textContent =
+        `${formatTime(current)} / ${formatTime(duration)}`;
+
+      document.getElementById('progressBar').style.width = `${percent}%`;
+    }
+
+    function resetVideo() {
+      player.seekTo(0);
+      player.pauseVideo();
+    }
+
+    function toggleMute(event) {
+      isMuted = !isMuted;
+      if (isMuted) {
+        player.mute();
+        event.target.textContent = '🔇';
+      } else {
+        player.unMute();
+        event.target.textContent = '🔊';
+      }
+    }
+
+    function toggleFullscreen() {
+      const iframe = document.querySelector('iframe');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      }
+    }
+
+    // Handle click on progress bar
+    document.addEventListener('DOMContentLoaded', () => {
+      const progressBarContainer = document.getElementById('progressBarContainer');
+
+      progressBarContainer.addEventListener('click', (e) => {
+        const rect = progressBarContainer.getBoundingClientRect();
+        const clickPos = e.clientX - rect.left;
+        const percentage = clickPos / rect.width;
+        const seekTo = percentage * duration;
+        player.seekTo(seekTo, true);
+      });
+    });
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

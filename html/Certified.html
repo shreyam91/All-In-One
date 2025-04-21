@@ -6,190 +6,190 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Certified</title>
     <style>
-        #getCertifiedRoot .container {
-
-            border-radius: 4px;
-            background: var(--UHC-Neutrals-Gray-1, #558a9d);
-            display: flex;
-            width: 1152px;
-            height: 289px;
+        body{
+            max-width: 1152px !important;
+            width: 100%;
         }
+        /* Base Styles - Desktop First */
+#getCertifiedRoot .container {
+    border-radius: 4px;
+    background: var(--UHC-Neutrals-Gray-1, #558a9d);
+    display: flex;
+    width: 1152px;
+    height: 289px;
+    position: relative;
+    flex-direction: row;
+}
 
-        #getCertifiedRoot .title {
-            position: absolute;
-            left: 32px;
-            top: 24px;
-            color: #002677;
-            font-size: 22.78px;
-            font-weight: 700;
-            line-height: 28px;
-        }
+#getCertifiedRoot .title {
+    position: absolute;
+    left: 32px;
+    top: 24px;
+    color: #002677;
+    font-size: 22.78px;
+    font-weight: 700;
+    line-height: 28px;
+}
 
-        #getCertifiedRoot .content-box {
-            width: 787px;
-            height: 122px;
-            position: absolute;
-            left: 32px;
-            top: 143px;
-            background: white;
-            border-radius: 4px;
+#getCertifiedRoot .description {
+    position: absolute;
+    left: 32px;
+    top: 68px;
+    width: 796px;
+    color: #212223;
+    font-size: 18.5px;
+    font-weight: 400;
+    line-height: 20px;
+}
 
-            height: 122px;
-            flex-shrink: 0;
-            border-radius: 4px;
-            background: #FFF;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            margin-bottom: 24px;
-        }
+#getCertifiedRoot .content-box {
+    position: absolute;
+    left: 32px;
+    top: 143px;
+    width: 787px;
+    height: 122px;
+    background: #FFF;
+    border-radius: 4px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
 
-        #getCertifiedRoot .link {
-            display: flex;
-            /*width: 296px;*/
-            padding: 9px 0px;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px;
-            color: var(--UHC-Interactive-Interactive-Active, #196ECF);
-            font-feature-settings: 'liga' off, 'clig' off;
-            font-size: 16px;
-            font-style: normal;
-            font-weight: 500;
-            line-height: 20px;
-            /* 125% */
-            margin-left: 20px;
-            text-decoration: none;
-        }
+#getCertifiedRoot .link {
+    display: flex;
+    padding: 9px 0;
+    align-items: center;
+    gap: 10px;
+    color: var(--UHC-Interactive-Interactive-Active, #196ECF);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+}
 
-        #getCertifiedRoot .link svg {
-            height: 27px;
-            align-items: flex-end;
-            gap: 4px;
+#getCertifiedRoot .link svg {
+    height: 27px;
+}
 
-        }
+#getCertifiedRoot .image {
+    position: absolute;
+    left: 860px;
+    top: 68px;
+    width: 268px;
+    height: 197px;
+}
+
+/* Tablet Styles (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #getCertifiedRoot .container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    #getCertifiedRoot .title {
+        position: static;
+        margin-bottom: 8px;
+    }
+
+    #getCertifiedRoot .description {
+        position: static;
+        width: auto;
+        height: auto;
+        margin-bottom: 16px;
+    }
+
+    #getCertifiedRoot .content-box {
+        position: static;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 24px;
+    }
+
+    #getCertifiedRoot .image {
+        position: static;
+        width: 100%;
+        max-width: 268px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    #getCertifiedRoot .container {
+        width: 100%;
+        /* height: 100%; */
+        flex-direction: column;
+        flex-shrink: 0;
+        padding: 12px;
+        position: relative;
+    }
+
+    #getCertifiedRoot .title {
+        width: 100%;
+        left: 12px;
+        top: 12px;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 5px;
+    }
+
+    #getCertifiedRoot .description {
+        width: calc(100% - 24px);
+        left: 12px;
+        top: 48px;
+        font-size: 16px;
+        line-height: 22px;
+        height: auto;
+        padding: 5px;
+    }
+
+    #getCertifiedRoot .image {
+        width: 100%;
+        max-width: 287px;
+        height: auto;
+        left: 12px;
+        top: 223px;
+        padding: 5px;
+    }
+
+    #getCertifiedRoot .content-box {
+        width: calc(100% - 24px) !important;
+        height: auto;
+        left: 12px;
+        top: 450px;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        gap: 10px;
+    }
+
+    #getCertifiedRoot .link {
+        display: flex;
+        padding: 9px 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 6px;
+        color: var(--UHC-Interactive-Interactive-Active, #196ECF);
+        font-feature-settings: 'liga' off, 'clig' off;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        margin-left: 12px;
+        text-decoration: none;
+    }
+
+    #getCertifiedRoot .link svg {
+        height: 22px;
+        align-items: center;
+    }
+}
 
 
-        #getCertifiedRoot .description {
-            width: 796px;
-            height: 59px;
-            position: absolute;
-            left: 32px;
-            top: 68px;
-            color: #212223;
-            font-size: 18.5px;
-            font-weight: 400;
-            line-height: 20px;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-        }
-
-        #getCertifiedRoot .image {
-            width: 268px;
-            height: 197px;
-            position: absolute;
-            left: 860px;
-            top: 68px;
-        }
-
-        @media (max-width: 768px) {
-            #getCertifiedRoot .content-box {
-                width: 400px;
-                height: 213px;
-                left: 32px;
-                top: 163px;
-                display: flex;
-                flex-direction: column;
-            }
-
-            #getCertifiedRoot .description {
-                width: 648px;
-                height: 79px;
-                left: 32px;
-                top: 68px;
-            }
-
-            #getCertifiedRoot .image {
-                width: 224px;
-                height: 165px;
-                left: 456px;
-                top: 187px;
-            }
-
-            #getCertifiedRoot .container {
-                width: 712px;
-                height: 400px;
-                flex-shrink: 0;
-            }
-        }
-
-        @media (max-width: 480px) {
-            #getCertifiedRoot .title {
-                width: 100%;
-                left: 12px;
-                top: 12px;
-                padding: 5px;
-            }
-
-            #getCertifiedRoot .description {
-                width: 287px;
-                height: 159px;
-                left: 12px;
-                top: 48px;
-                padding: 5px;
-            }
-
-            #getCertifiedRoot .content-box {
-                width: 287px !important;
-                height: 229px;
-                left: 12px;
-                top: 450px;
-                display: flex;
-                flex-direction: column;
-                padding: 5px;
-            }
-
-            #getCertifiedRoot .link {
-                display: flex;
-                padding: 9px 0px;
-                flex-direction: row;
-                align-items: center;
-                gap: 4px;
-                /* Adjusted gap for mobile view */
-                color: var(--UHC-Interactive-Interactive-Active, #196ECF);
-                font-feature-settings: 'liga' off, 'clig' off;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 500;
-                line-height: 20px;
-                /* 125% */
-                margin-left: 20px;
-                text-decoration: none;
-            }
-
-            #getCertifiedRoot .link svg {
-                height: 27px;
-                align-items: center;
-                gap: 0px;
-                /* Removed gap for mobile view */
-            }
-
-            #getCertifiedRoot .image {
-                width: 287px;
-                height: 213px;
-                left: 12px;
-                top: 223px;
-                padding: 5px;
-            }
-
-            #getCertifiedRoot .container {
-                width: 311px;
-                height: 691px;
-                flex-shrink: 0;
-                padding: 5px;
-            }
-        }
     </style>
 </head>
 

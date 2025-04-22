@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: 30px;
+        padding: 30px;
+    }
+
+    .Coachmark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid gray;
+        max-width: 304px;
+        background: transparent;
+        padding-top: 16px;
+        box-sizing: border-box;
+    }
+
+    .notch-container {
+        width: 32px;
+        height: 16px;
+        margin-top: -16px;
+        align-self: flex-start;
+        margin-left: 20px;
+    }
+
+    .container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+
+        padding: 16px;
+        border-radius: 8px;
+        background: lightslategray;
+
+        max-height: 230px;
+        box-sizing: border-box;
+    }
+
+    .heading {
+        width: 100%;
+        color: white;
+        font-size: 14px;
+        font-family: sans-serif;
+        font-weight: 400;
+        line-height: 18px;
+    }
+
+    ul {
+        padding-left: 20px;
+        margin: 0;
+        list-style-type: disc;
+    }
+
+    .ul li {
+        word-wrap: break-word;
+    }
+
+    p {
+        margin-top: 8px;
+        margin-bottom: 0;
+        word-wrap: break-word;
+    }
+
+    /* Tablet View  */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .Coachmark {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid gray;
+        max-width: 304px;
+        background: transparent;
+        padding-top: 16px;
+        box-sizing: border-box;
+    }
+
+    .notch-container {
+        width: 32px;
+        height: 16px;
+        margin-top: -16px;
+        align-self: flex-start;
+        margin-left: 20px;
+    }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            padding: 16px;
+            border-radius: 8px;
+            background: lightslategray;
+            max-height: 230px;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+            list-style-type: disc;
+        }
+
+        .ul li {
+            word-wrap: break-word;
+        }
+
+        p {
+            margin-top: 8px;
+            margin-bottom: 0;
+            word-wrap: break-word;
+        }
+    }
+
+    /* Mobile View  */
+    @media (max-width: 767px) {
+        .Coachmark {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 2px solid gray;
+            max-width: 185px;
+            width: 100%;
+            background: transparent;
+            padding-top: 16px;
+            box-sizing: border-box;
+        }
+
+        .notch-container {
+            width: 32px;
+            height: 16px;
+            position: relative;
+            margin-top: -16px;
+            left: 10%;
+            z-index: 2;
+        }
+
+        .container {
+            max-width: 185px;
+            width: 100%;
+            max-height: 338px;
+            height: auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            padding: 16px;
+            border-radius: 8px;
+            background: lightslategray;
+            box-sizing: border-box;
+        }
+
+        .heading {
+            max-width: 153px;
+            width: 100%;
+            max-height: 306px;
+            height: auto;
+
+            color: white;
+            font-size: 14px;
+            font-family: sans-serif;
+            font-weight: 400;
+            line-height: 18px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+            list-style-type: disc;
+        }
+
+        .ul li {
+            word-wrap: break-word;
+        }
+
+        p {
+            margin-top: 8px;
+            margin-bottom: 0;
+            word-wrap: break-word;
+        }
+    }
+</style>
+
+<body>
+    <div class="Coachmark">
+
+        <div class="notch-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="16" viewBox="0 0 32 16" fill="none">
+                <path d="M14.1077 1.43718C14.8765 0.643561 16.1433 0.623765 16.9365 1.39297L32 16H0L14.1077 1.43718Z"
+                    fill="#4B4D4F" />
+            </svg>
+        </div>
+
+        <div class="container">
+            <div class="heading">
+                <ul>
+                    <li>
+                        Premier agents with no more than one complaint point in the past year. OR
+                    </li>
+                    <li>
+                        Agents selling UnitedHealthcare for 2 consecutive years with 20+ apps and no more than one
+                        complaint point in the past year.
+                    </li>
+                </ul>
+
+
+                <p>Eligible agents will see Fast Track as an available option in Learning Lab</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

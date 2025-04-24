@@ -93,21 +93,6 @@
         position: absolute;
     }
 
-    /* Media query for tablet view (600px to 1024px) */
-@media (max-width: 1024px) and (min-width: 600px) {
-    #getCertifiedTableRoot .title-container {
-        position: sticky; 
-        left: 0px; 
-        top: 87px; 
-        margin-top: 0; 
-        z-index: 10; 
-        box-sizing: border-box;
-        overflow: visible;
-        width: 100%;
-    }
-
-    
-}
 
 
 
@@ -149,41 +134,14 @@
 
     }
 
-    /*Even rows bg dark color*/
 
     #getCertifiedTableRoot tr:nth-child(even) .svg-fastrack {
 
-        background-color: rgba(245, 183, 0, 0.30);
+background-color: rgba(245, 183, 0, 0.30);
 
 
 
-    }
-
-    #getCertifiedTableRoot .svg-fastrack[rowspan]::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    background: repeating-linear-gradient(
-        to bottom,
-        rgba(245, 183, 0, 0.10) 0px,
-        rgba(245, 183, 0, 0.10) 60px,
-        rgba(245, 183, 0, 0.30) 60px,
-        rgba(245, 183, 0, 0.30) 120px
-    );
-    border-right: 1px solid #ddd; /* match table borders */
 }
-
-/* Ensure content stays above the background layer */
-#getCertifiedTableRoot .svg-fastrack[rowspan] {
-    position: relative;
-    z-index: 1;
-    background: none !important; /* clear any conflicting bg */
-}
-
 
 
     #getCertifiedTableRoot tr:nth-child(even) .svg-standard {
@@ -755,6 +713,20 @@ background-color: rgba(204, 242, 247, 0.30);
     height: 300px; /* Increase the height */
 }
 
+.svg-container{
+    /* background-color: inherit; */
+}
+
+/* Apply background color to the odd rows */
+#getCertifiedTableRoot tr:nth-child(odd) td.svg-fastrack {
+    background-color: rgba(245, 183, 0, 0.10);
+}
+
+/* Apply background color to the even rows */
+#getCertifiedTableRoot tr:nth-child(even) td.svg-fastrack {
+    background-color: rgba(245, 183, 0, 0.30);
+}
+
 
 
 </style>
@@ -1147,10 +1119,10 @@ background-color: rgba(204, 242, 247, 0.30);
 
 
                 <td class="left-column">${properties.t2r2d1}</td>
-                <td class="svg-fastrack">${properties.t2r1d2}</td>
+                <!-- <td class="svg-fastrack">${properties.t2r1d2}</td> -->
 
 
-                <!-- <td class="svg-fastrack" rowspan="5" style="text-align: center; vertical-align: middle;">
+                <td class="svg-fastrack" rowspan="5" style="text-align: center; vertical-align: middle;">
                     
                     <div class="svg-container">
             <div style="margin-bottom: 10px;">${properties.t2r2d2}</div>
@@ -1160,7 +1132,7 @@ background-color: rgba(204, 242, 247, 0.30);
                         " fill="#7D7F81" />
                     </svg>
                 </div>
-                </td> -->
+                </td>
 
                 
 
@@ -1178,7 +1150,7 @@ background-color: rgba(204, 242, 247, 0.30);
 
                 <td class="left-column">${properties.t2r3d1}</td>
 
-                <td class="svg-fastrack"></td>
+                <!-- <td class="svg-fastrack"></td> -->
 
                 <td class="svg-standard">${properties.t2r3d3}</td>
 
@@ -1204,7 +1176,7 @@ background-color: rgba(204, 242, 247, 0.30);
 
                 </td>
 
-                <td class="svg-fastrack"></td>
+                <!-- <td class="svg-fastrack"></td> -->
 
                 <td class="next-container"></td>
 
@@ -1218,7 +1190,7 @@ background-color: rgba(204, 242, 247, 0.30);
 
                 <td class="left-column">${properties.t2r5d1}</td>
 
-                <td class="svg-fastrack"></td>
+                <!-- <td class="svg-fastrack"></td> -->
 
                 <td class="svg-standard">${properties.t2r5d3}</td>
 
@@ -1232,7 +1204,7 @@ background-color: rgba(204, 242, 247, 0.30);
 
                 <td class="left-column">${properties.t2r6d1}</td>
 
-                <td class="svg-fastrack"></td>
+                <!-- <td class="svg-fastrack"></td> -->
 
                 <td class="svg-standard">${properties.t2r6d3}</td>
 
@@ -1244,12 +1216,12 @@ background-color: rgba(204, 242, 247, 0.30);
 
         </table>
 
-        <div class="arrow-container">
+        <!-- <div class="arrow-container">
             <svg class="arrow-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="300" viewBox="0 0 16 280" fill="none">
                 <path d="M8 0L2.343 5.657C1.953 6.047 1.953 6.68 2.343 7.071C2.734 7.461 3.367 7.461 3.757 7.071L8 2.828L12.243 7.071C12.633 7.461 13.266 7.461 13.657 7.071C14.047 6.68 14.047 6.047 13.657 5.657L8 0ZM7 8V237C7 237.553 7.447 238 8 238C8.553 238 9 237.553 9 237V8C9 7.447 8.553 7 8 7C7.447 7 7 7.447 7 8ZM8 245L13.657 239.343C14.047 238.953 14.047 238.32 13.657 237.929C13.266 237.539 12.633 237.539 12.243 237.929L8 242.172L3.757 237.929C3.367 237.539 2.734 237.539 2.343 237.929C1.953 238.32 1.953 238.953 2.343 239.343L8 245Z
                 " fill="#7D7F81" />
             </svg>
-        </div>
+        </div> -->
 
     </div>
     

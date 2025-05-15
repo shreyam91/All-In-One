@@ -13,7 +13,7 @@
         /* Base Styles - Desktop First */
 #getCertifiedRoot .container {
     border-radius: 4px;
-    background: var(--UHC-Neutrals-Gray-1, #558a9d);
+    /* background: var(--UHC-Neutrals-Gray-1, #558a9d); */
     display: flex;
     width: 1152px;
     height: 289px;
@@ -168,7 +168,7 @@
         gap: 10px;
     }
 
-    #getCertifiedRoot .link {
+    /* #getCertifiedRoot .link {
         display: flex;
         padding: 9px 0;
         flex-direction: row;
@@ -181,11 +181,25 @@
         line-height: 20px;
         margin-left: 12px;
         text-decoration: none;
-    }
+    } */
+
+    #getCertifiedRoot .link {
+    display: flex;
+    align-items: center; /* Vertically align text and SVG */
+    gap: 10px;
+    color: var(--UHC-Interactive-Interactive-Active, #196ECF);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+}
 
     #getCertifiedRoot .link svg {
-        height: 22px;
+        height: 25px;
+        width: 24px;
         align-items: center;
+        flex-shrink: 0;
     }
 }
 
